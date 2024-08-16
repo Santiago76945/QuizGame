@@ -6,6 +6,7 @@ let roundsLeft = 5;
 let player1Score = 0;
 let player2Score = 0;
 let canPressButtons = true; // Variable para controlar la interacción de los botones
+let playersWhoAnswered = 0; // Nueva variable para rastrear cuántos jugadores han respondido
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchQuestions().then(() => {
@@ -42,10 +43,18 @@ function setQuestion() {
     shuffledAnswers.forEach((answer, index) => {
         let button1 = document.getElementById(`answer1-${index + 1}`);
         let button2 = document.getElementById(`answer2-${index + 1}`);
-        button1.innerText = button2.innerText = answer.text;
-        button1.className = button2.className = 'answerButtons';
+
+        // Restablecer el estado y los estilos de los botones
+        button1.className = 'answerButtons';
+        button2.className = 'answerButtons';
+        button1.style.backgroundColor = ''; // Eliminar cualquier estilo de color de fondo aplicado
+        button2.style.backgroundColor = '';
         button1.disabled = false;
         button2.disabled = false;
+
+        // Asignar el texto correcto desde el objeto "answer"
+        button1.innerText = answer.text;
+        button2.innerText = answer.text;
 
         if (answer.correct) {
             button1.classList.add('correctAnswer');
@@ -59,6 +68,11 @@ function setQuestion() {
 
 function startPlayerTurn(playerNumber) {
     canPressButtons = true; // Habilita los botones para el jugador actual
+    let otherPlayer = playerNumber === 1 ? 2 : 1;
+
+    // Deshabilitar los botones del otro jugador
+    disableAnswerButtons(otherPlayer, true);
+    disableButton(`bigRedButton${otherPlayer}`);
 
     let playerStatus = document.getElementById(`player${playerNumber}-status`);
     playerStatus.innerText = 'Tienes 5 segundos para responder';
@@ -74,6 +88,9 @@ function startPlayerTurn(playerNumber) {
             handlePlayerTimeout(playerNumber);
         }
     }, 1000);
+
+    // Guardar el intervalo en una propiedad del objeto para poder detenerlo si es necesario
+    playerStatus.interval = interval;
 }
 
 function enableAnswerButtons(playerNumber) {
@@ -86,21 +103,33 @@ function enableAnswerButtons(playerNumber) {
 }
 
 function handleAnswerClick(button, playerNumber) {
-    if (!canPressButtons) return;
+    if (!canPressButtons) return; // Evitar múltiples clics
 
+    canPressButtons = false; // Desactivar inmediatamente después del primer clic
     let isCorrect = button.classList.contains('correctAnswer');
+    let playerStatus = document.getElementById(`player${playerNumber}-status`);
+
     if (isCorrect) {
         updateScore(playerNumber, 10);
         disableAnswerButtons(playerNumber, true);
-        canPressButtons = false;
         showMessage(playerNumber, 'Respondiste correctamente +10 puntos');
-        proceedToNextRound();
+        clearInterval(playerStatus.interval); // Detener el contador si se responde correctamente
     } else {
         updateScore(playerNumber, -10);
         button.style.backgroundColor = 'red';
         button.disabled = true;
-        canPressButtons = false;
         showMessage(playerNumber, 'Respondiste mal la respuesta -10 puntos');
+        clearInterval(playerStatus.interval); // Detener el contador si se responde incorrectamente
+    }
+
+    playersWhoAnswered++; // Incrementa el contador de jugadores que han respondido
+
+    if (playersWhoAnswered === 2) { // Si ambos jugadores han respondido
+        setTimeout(() => {
+            playersWhoAnswered = 0; // Resetea el contador para la siguiente ronda
+            proceedToNextRound();
+        }, 5000); // Espera 5 segundos antes de avanzar a la siguiente ronda
+    } else {
         allowOtherPlayerToAnswer(playerNumber);
     }
 }
@@ -120,7 +149,16 @@ function disableAnswerButtons(playerNumber, disableAll = false) {
 function handlePlayerTimeout(playerNumber) {
     updateScore(playerNumber, -10);
     showMessage(playerNumber, 'No respondiste a tiempo -10 puntos');
-    allowOtherPlayerToAnswer(playerNumber);
+    playersWhoAnswered++; // Incrementa el contador si el jugador no respondió a tiempo
+
+    if (playersWhoAnswered === 2) { // Si ambos jugadores han respondido o se les acabó el tiempo
+        setTimeout(() => {
+            playersWhoAnswered = 0; // Resetea el contador para la siguiente ronda
+            proceedToNextRound();
+        }, 5000); // Espera 5 segundos antes de avanzar a la siguiente ronda
+    } else {
+        allowOtherPlayerToAnswer(playerNumber);
+    }
 }
 
 function allowOtherPlayerToAnswer(playerNumber) {
@@ -128,7 +166,8 @@ function allowOtherPlayerToAnswer(playerNumber) {
     canPressButtons = true; // Permitir que el otro jugador interactúe
 
     document.getElementById(`player${otherPlayer}-status`).innerText = 'Tienes 15 segundos para responder';
-    enableAnswerButtons(otherPlayer);
+    enableAnswerButtons(otherPlayer); // Habilitar directamente los botones de respuesta
+
     let countdown = 15;
     let interval = setInterval(() => {
         countdown--;
@@ -138,17 +177,26 @@ function allowOtherPlayerToAnswer(playerNumber) {
             handlePlayerTimeout(otherPlayer);
         }
     }, 1000);
+
+    // Guardar el intervalo en una propiedad del objeto para poder detenerlo después de que el jugador responda
+    document.getElementById(`player${otherPlayer}-status`).interval = interval;
 }
 
 function updateScore(playerNumber, points) {
     if (playerNumber === 1) {
         player1Score += points;
         document.getElementById('player1-score').innerText = player1Score;
-        document.getElementById('player2-score-mirror').innerText = player1Score; // Actualiza el espejo en la pantalla de Player 2
+        let player2Mirror = document.getElementById('player2-score-mirror');
+        if (player2Mirror) {
+            player2Mirror.innerText = player1Score; // Actualiza el espejo en la pantalla de Player 2
+        }
     } else {
         player2Score += points;
         document.getElementById('player2-score').innerText = player2Score;
-        document.getElementById('player1-score-mirror').innerText = player2Score; // Actualiza el espejo en la pantalla de Player 1
+        let player1Mirror = document.getElementById('player1-score-mirror');
+        if (player1Mirror) {
+            player1Mirror.innerText = player2Score; // Actualiza el espejo en la pantalla de Player 1
+        }
     }
 }
 
@@ -164,7 +212,8 @@ function proceedToNextRound() {
         setTimeout(() => {
             currentQuestionIndex++;
             setQuestion();
-            setupGame();
+            canPressButtons = true; // Restablecer la variable para la nueva ronda
+            setupGame(); // Llamada para volver a habilitar los botones grandes y configurar la ronda
         }, 10000);
     }
 }
