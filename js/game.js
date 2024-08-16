@@ -186,16 +186,16 @@ function updateScore(playerNumber, points) {
     if (playerNumber === 1) {
         player1Score += points;
         document.getElementById('player1-score').innerText = player1Score;
-        let player2Mirror = document.getElementById('player2-score-mirror');
+        let player2Mirror = document.getElementById('player1-score-mirror');
         if (player2Mirror) {
-            player2Mirror.innerText = player1Score; // Actualiza el espejo en la pantalla de Player 2
+            player2Mirror.innerText = player2Score; // Update mirrored score with opponent's score
         }
     } else {
         player2Score += points;
         document.getElementById('player2-score').innerText = player2Score;
-        let player1Mirror = document.getElementById('player1-score-mirror');
+        let player1Mirror = document.getElementById('player2-score-mirror');
         if (player1Mirror) {
-            player1Mirror.innerText = player2Score; // Actualiza el espejo en la pantalla de Player 1
+            player1Mirror.innerText = player1Score; // Update mirrored score with opponent's score
         }
     }
 }
@@ -271,15 +271,15 @@ function showMessage(playerNumber, message, duration = 3000) {
 function showCountdownMessage(message, countdownDuration = 10) {
     const messageElement1 = document.createElement('div');
     const messageElement2 = document.createElement('div');
-    
+
     // El jugador 1 ve el mensaje normalmente
     messageElement1.className = `messageOnScreen bottom show`;
     // El jugador 2 necesita la corrección de orientación
     messageElement2.className = `messageOnScreen top show correctOrientation`;
-    
+
     messageElement1.innerText = `${message} ${countdownDuration}`;
     messageElement2.innerText = `${message} ${countdownDuration}`;
-    
+
     document.getElementById('player1-section').appendChild(messageElement1);
     document.getElementById('player2-section').appendChild(messageElement2);
 

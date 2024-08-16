@@ -1,5 +1,3 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #282c34;
@@ -9,40 +7,73 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    flex-direction: column; /* Cambiado para apilar verticalmente */
+    flex-direction: column;
+    overflow: hidden; /* Evitar el desbordamiento */
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh; /* Contenedor que ocupa el 75% de la altura de la pantalla */
+    width: 100%;
+    max-width: 100vw; /* Asegurarse de que no se desborde en el ancho */
+    overflow: hidden; /* Asegurar que los elementos se mantengan dentro */
 }
 
 .container {
     display: flex;
-    flex-direction: column; /* Cambiado para apilar verticalmente */
+    flex-direction: column;
     justify-content: space-between;
     height: 100%;
     width: 100%;
+    max-width: 100%; /* Limitar el ancho máximo */
+    padding: 10px 0; /* Ajustar el padding superior e inferior */
+    box-sizing: border-box; /* Incluir padding en el cálculo del ancho y alto */
 }
 
 .player-section {
     width: 100%;
     text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #444;
+    padding: 5px 0; /* Reducir padding dentro de cada sección */
+    flex: 1;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
-.player-section:last-child {
-    border-bottom: none;
+.divider {
+    position: absolute;
+    top: 52%; /* Posicionar en el centro vertical de la pantalla */
+    left: 0;
+    transform: translateY(-50%); /* Ajustar la posición para que esté exactamente en el medio */
+    width: 100%;
+    height: 5px;
+    background-color: white; /* Línea divisoria blanca */
+    margin: 0; /* Sin margen, se coloca entre las secciones */
+    box-sizing: border-box;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around; /* Distribuir uniformemente en horizontal */
+    margin-bottom: 5px; /* Ajustar margen inferior */
+    font-size: 2vw; /* Ajustar tamaño de fuente para adaptarse a la pantalla */
+    box-sizing: border-box;
 }
 
 .scoreboard p {
-    margin: 5px 0;
+    margin: 0 5px; /* Espaciado entre los elementos */
+    flex: 1; /* Para asegurar que cada elemento ocupe un espacio similar */
+    text-align: center; /* Centrar el texto dentro de cada p */
 }
 
 .bigRedButton {
     background-color: grey;
     border: none;
-    width: 100px;
-    height: 100px;
-    margin: 20px 0;
+    width: 20vw; /* Ajustar ancho relativo a la pantalla */
+    height: 20vw; /* Ajustar altura relativa a la pantalla */
+    margin: 10px auto; /* Centrar y ajustar margen */
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 4vw; /* Ajustar tamaño de la fuente para adaptarse a la pantalla */
     color: #ffffff;
     cursor: pointer;
 }
@@ -50,18 +81,18 @@ body {
 .answer-buttons {
     display: flex;
     justify-content: space-around; /* Ajustar la distribución de los botones */
-    margin: 10px 0;
+    margin: 5px 0;
     flex-wrap: wrap; /* Permitir que los botones se envuelvan si es necesario */
 }
 
 .answerButtons {
     background-color: grey;
     border: none;
-    width: 120px; /* Aumentar el ancho de los botones */
-    height: 60px;  /* Aumentar la altura de los botones */
+    width: 22vw; /* Ajustar el ancho de los botones */
+    height: 12vw;  /* Ajustar la altura de los botones */
     margin: 5px;
     border-radius: 5px;
-    font-size: 16px; /* Ajustar el tamaño de la fuente */
+    font-size: 3vw; /* Ajustar el tamaño de la fuente */
     color: #ffffff;
     cursor: pointer;
 }
@@ -75,9 +106,9 @@ body {
 }
 
 .status-text {
-    margin-top: 10px;
-    font-size: 18px;
-    height: 30px;
+    margin-top: 5px;
+    font-size: 2.5vw; /* Ajustar tamaño de fuente para adaptarse a la pantalla */
+    height: auto; /* Permitir ajuste automático del alto */
 }
 
 .mirror {
@@ -98,7 +129,7 @@ body {
     position: absolute;
     width: 100%;
     padding: 10px;
-    font-size: 18px;
+    font-size: 2.5vw; /* Ajustar tamaño de fuente para adaptarse a la pantalla */
     text-align: center;
     background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
@@ -128,6 +159,9 @@ body {
 .messageOnScreen.correctOrientation {
     transform: rotate(0deg) !important;
 }
+
+
+
 
 
 
