@@ -1,0 +1,136 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282c34;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Cambiado para apilar verticalmente */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Cambiado para apilar verticalmente */
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.player-section {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #444;
+}
+
+.player-section:last-child {
+    border-bottom: none;
+}
+
+.scoreboard p {
+    margin: 5px 0;
+}
+
+.bigRedButton {
+    background-color: grey;
+    border: none;
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.answer-buttons {
+    display: flex;
+    justify-content: space-around; /* Ajustar la distribución de los botones */
+    margin: 10px 0;
+    flex-wrap: wrap; /* Permitir que los botones se envuelvan si es necesario */
+}
+
+.answerButtons {
+    background-color: grey;
+    border: none;
+    width: 120px; /* Aumentar el ancho de los botones */
+    height: 60px;  /* Aumentar la altura de los botones */
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 16px; /* Ajustar el tamaño de la fuente */
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.bigRedButton.enabled, .answerButtons.enabled {
+    background-color: red;
+}
+
+.bigRedButton.enabled:hover, .answerButtons.enabled:hover {
+    background-color: #ff4d4d;
+}
+
+.status-text {
+    margin-top: 10px;
+    font-size: 18px;
+    height: 30px;
+}
+
+.mirror {
+    transform: rotate(180deg);
+}
+
+/* Si prefieres que solo uno de los jugadores esté invertido */
+#player1-section {
+    transform: rotate(180deg);
+}
+
+/* Si no quieres rotación en absoluto, puedes eliminar la clase .mirror o el transform */
+.mirror {
+    transform: none;
+}
+
+.messageOnScreen {
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.messageOnScreen.top {
+    top: 0;
+}
+
+.messageOnScreen.bottom {
+    bottom: 0;
+}
+
+.messageOnScreen.show {
+    opacity: 1;
+}
+
+/* Rotación para mensajes en pantallas normales */
+.mirror .messageOnScreen.inverted {
+    transform: rotate(180deg) !important;
+}
+
+/* Mantener la orientación para mensajes invertidos */
+.messageOnScreen.correctOrientation {
+    transform: rotate(0deg) !important;
+}
+
+
+
+
+
+

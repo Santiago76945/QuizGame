@@ -1,0 +1,183 @@
+[
+    {
+        "question": "¿Quién fue el primer ser humano en realizar un viaje espacial?",
+        "answers": [
+            { "text": "Neil Armstrong", "correct": false },
+            { "text": "Yuri Gagarin", "correct": true },
+            { "text": "John Glenn", "correct": false },
+            { "text": "Valentina Tereshkova", "correct": false }
+        ]
+    },
+    {
+        "question": "¿En qué año comenzó la Primera Guerra Mundial?",
+        "answers": [
+            { "text": "1914", "correct": true },
+            { "text": "1918", "correct": false },
+            { "text": "1939", "correct": false },
+            { "text": "1929", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el país con la mayor cantidad de Patrimonios de la Humanidad reconocidos por la UNESCO?",
+        "answers": [
+            { "text": "China", "correct": true },
+            { "text": "Italia", "correct": false },
+            { "text": "India", "correct": false },
+            { "text": "España", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el número total de sinfonías compuestas por Ludwig van Beethoven?",
+        "answers": [
+            { "text": "7", "correct": false },
+            { "text": "9", "correct": true },
+            { "text": "11", "correct": false },
+            { "text": "5", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es la molécula biológica conocida como 'la molécula de la energía'?",
+        "answers": [
+            { "text": "ADN", "correct": false },
+            { "text": "ATP", "correct": true },
+            { "text": "ARN", "correct": false },
+            { "text": "Glucosa", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué civilización antigua construyó la ciudad de Machu Picchu?",
+        "answers": [
+            { "text": "Los Mayas", "correct": false },
+            { "text": "Los Incas", "correct": true },
+            { "text": "Los Aztecas", "correct": false },
+            { "text": "Los Olmecas", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué físico es conocido por la ecuación E=mc²?",
+        "answers": [
+            { "text": "Isaac Newton", "correct": false },
+            { "text": "Albert Einstein", "correct": true },
+            { "text": "Niels Bohr", "correct": false },
+            { "text": "Max Planck", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el órgano más grande del cuerpo humano?",
+        "answers": [
+            { "text": "El corazón", "correct": false },
+            { "text": "La piel", "correct": true },
+            { "text": "El hígado", "correct": false },
+            { "text": "El cerebro", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Quién pintó 'La última cena'?",
+        "answers": [
+            { "text": "Miguel Ángel", "correct": false },
+            { "text": "Leonardo da Vinci", "correct": true },
+            { "text": "Vincent van Gogh", "correct": false },
+            { "text": "Pablo Picasso", "correct": false }
+        ]
+    },
+    {
+        "question": "¿En qué país se encuentra el desierto de Atacama?",
+        "answers": [
+            { "text": "Perú", "correct": false },
+            { "text": "Chile", "correct": true },
+            { "text": "Argentina", "correct": false },
+            { "text": "Bolivia", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es la capital de Australia?",
+        "answers": [
+            { "text": "Sídney", "correct": false },
+            { "text": "Melbourne", "correct": false },
+            { "text": "Canberra", "correct": true },
+            { "text": "Brisbane", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Quién fue el autor de la teoría de la relatividad?",
+        "answers": [
+            { "text": "Isaac Newton", "correct": false },
+            { "text": "Albert Einstein", "correct": true },
+            { "text": "Galileo Galilei", "correct": false },
+            { "text": "Stephen Hawking", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país es conocido como la cuna del Renacimiento?",
+        "answers": [
+            { "text": "Francia", "correct": false },
+            { "text": "Italia", "correct": true },
+            { "text": "Grecia", "correct": false },
+            { "text": "Alemania", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el río más largo del mundo?",
+        "answers": [
+            { "text": "El Nilo", "correct": false },
+            { "text": "El Amazonas", "correct": true },
+            { "text": "El Yangtsé", "correct": false },
+            { "text": "El Mississippi", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué escritor es conocido por la novela 'Cien años de soledad'?",
+        "answers": [
+            { "text": "Mario Vargas Llosa", "correct": false },
+            { "text": "Gabriel García Márquez", "correct": true },
+            { "text": "Julio Cortázar", "correct": false },
+            { "text": "Pablo Neruda", "correct": false }
+        ]
+    },
+    {
+        "question": "¿En qué año cayó el Muro de Berlín?",
+        "answers": [
+            { "text": "1989", "correct": true },
+            { "text": "1991", "correct": false },
+            { "text": "1985", "correct": false },
+            { "text": "1990", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué arquitecto diseñó la Sagrada Familia en Barcelona?",
+        "answers": [
+            { "text": "Frank Lloyd Wright", "correct": false },
+            { "text": "Antoni Gaudí", "correct": true },
+            { "text": "Le Corbusier", "correct": false },
+            { "text": "Oscar Niemeyer", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+        "answers": [
+            { "text": "Hierro", "correct": false },
+            { "text": "Aluminio", "correct": true },
+            { "text": "Cobre", "correct": false },
+            { "text": "Magnesio", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué inventor es conocido por la invención de la bombilla eléctrica?",
+        "answers": [
+            { "text": "Nikola Tesla", "correct": false },
+            { "text": "Thomas Edison", "correct": true },
+            { "text": "Alexander Graham Bell", "correct": false },
+            { "text": "James Watt", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es la lengua más hablada del mundo por número de hablantes nativos?",
+        "answers": [
+            { "text": "Inglés", "correct": false },
+            { "text": "Mandarín", "correct": true },
+            { "text": "Español", "correct": false },
+            { "text": "Hindú", "correct": false }
+        ]
+    }
+]
+

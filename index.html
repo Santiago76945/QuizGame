@@ -1,0 +1,52 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="player-section" id="player1-section">
+            <h2 id="player1-name">Player 1</h2>
+            <div class="scoreboard">
+                <p>Puntos: <span id="player1-score">0</span></p>
+                <p>Puntos de tu oponente: <span id="player2-score">0</span></p>
+                <p>Rondas restantes: <span id="rounds-left">5</span></p>
+            </div>
+            <div id="question-container" class="question-container"></div>
+            <button id="bigRedButton1" class="bigRedButton" disabled></button>
+            <div class="answer-buttons">
+                <button id="answer1-1" class="answerButtons" disabled>A</button>
+                <button id="answer1-2" class="answerButtons" disabled>B</button>
+                <button id="answer1-3" class="answerButtons" disabled>C</button>
+                <button id="answer1-4" class="answerButtons" disabled>D</button>
+            </div>
+            <p id="player1-status" class="status-text">Presiona el botón rojo si sabes la respuesta.</p>
+        </div>
+
+        <div class="player-section mirror" id="player2-section">
+            <h2 id="player2-name">Player 2</h2>
+            <div class="scoreboard">
+                <p>Puntos: <span id="player2-score">0</span></p>
+                <p>Puntos de tu oponente: <span id="player1-score-mirror">0</span></p>
+                <p>Rondas restantes: <span id="rounds-left-mirror">5</span></p>
+            </div>
+            <div id="question-container-mirror" class="question-container"></div>
+            <button id="bigRedButton2" class="bigRedButton" disabled></button>
+            <div class="answer-buttons">
+                <button id="answer2-1" class="answerButtons" disabled>A</button>
+                <button id="answer2-2" class="answerButtons" disabled>B</button>
+                <button id="answer2-3" class="answerButtons" disabled>C</button>
+                <button id="answer2-4" class="answerButtons" disabled>D</button>
+            </div>
+            <p id="player2-status" class="status-text">Presiona el botón rojo si sabes la respuesta.</p>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
