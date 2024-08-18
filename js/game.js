@@ -1,4 +1,4 @@
-//game.js
+// game.js
 
 let questions = [];
 let currentQuestionIndex = 0;
@@ -29,8 +29,14 @@ function setupGame() {
     enableButton('bigRedButton1');
     enableButton('bigRedButton2');
 
-    document.getElementById('bigRedButton1').addEventListener('click', () => startPlayerTurn(1));
-    document.getElementById('bigRedButton2').addEventListener('click', () => startPlayerTurn(2));
+    document.getElementById('bigRedButton1').addEventListener('click', () => {
+        playRedButtonSound();
+        startPlayerTurn(1);
+    });
+    document.getElementById('bigRedButton2').addEventListener('click', () => {
+        playRedButtonSound();
+        startPlayerTurn(2);
+    });
 }
 
 function setQuestion() {
@@ -67,6 +73,7 @@ function setQuestion() {
 }
 
 function startPlayerTurn(playerNumber) {
+    playTickTockSound();  // Inicia el sonido de "Tick Tock" cuando comienza el turno del jugador
     canPressButtons = true; // Habilita los botones para el jugador actual
     let otherPlayer = playerNumber === 1 ? 2 : 1;
 
@@ -103,6 +110,8 @@ function enableAnswerButtons(playerNumber) {
 }
 
 function handleAnswerClick(button, playerNumber) {
+    stopTickTockSound();  // Detiene el sonido de "Tick Tock" cuando el jugador responde
+
     if (!canPressButtons) return; // Evitar múltiples clics
 
     canPressButtons = false; // Desactivar inmediatamente después del primer clic
@@ -110,11 +119,13 @@ function handleAnswerClick(button, playerNumber) {
     let playerStatus = document.getElementById(`player${playerNumber}-status`);
 
     if (isCorrect) {
+        playCorrectSound();  // Reproduce el sonido correcto
         updateScore(playerNumber, 10);
         disableAnswerButtons(playerNumber, true);
         showMessage(playerNumber, 'Respondiste correctamente +10 puntos');
         clearInterval(playerStatus.interval); // Detener el contador si se responde correctamente
     } else {
+        playIncorrectSound();  // Reproduce el sonido incorrecto
         updateScore(playerNumber, -10);
         button.style.backgroundColor = 'red';
         button.disabled = true;
@@ -147,6 +158,8 @@ function disableAnswerButtons(playerNumber, disableAll = false) {
 }
 
 function handlePlayerTimeout(playerNumber) {
+    stopTickTockSound();  // Detiene el sonido de "Tick Tock" cuando el tiempo se acaba
+    playIncorrectSound(); // Reproduce el sonido incorrecto porque no respondió a tiempo
     updateScore(playerNumber, -10);
     showMessage(playerNumber, 'No respondiste a tiempo -10 puntos');
     playersWhoAnswered++; // Incrementa el contador si el jugador no respondió a tiempo
@@ -229,10 +242,8 @@ function updateScore(playerNumber, points) {
     }
 }
 
-
-
-
 function proceedToNextRound() {
+    stopTickTockSound();  // Detener el sonido "Tick Tock" al final de la ronda
     roundsLeft--;
     document.getElementById('rounds-left').innerText = roundsLeft;
     document.getElementById('rounds-left-mirror').innerText = roundsLeft;
@@ -246,11 +257,13 @@ function proceedToNextRound() {
             setQuestion();
             canPressButtons = true; // Restablecer la variable para la nueva ronda
             setupGame(); // Llamada para volver a habilitar los botones grandes y configurar la ronda
+            playTickTockSound(); // Reanudar el sonido "Tick Tock" al comienzo de la nueva ronda
         }, 10000);
     }
 }
 
 function endGame() {
+    stopTickTockSound();  // Detener el sonido "Tick Tock" al finalizar el juego
     if (player1Score > player2Score) {
         showMessage(1, 'Felicitaciones jugador, ganaste');
         showMessage(2, 'Perdiste, qué triste, no hay nadie peor que tú');
@@ -331,5 +344,6 @@ function showCountdownMessage(message, countdownDuration = 10) {
         }
     }, 1000);
 }
+
 
 
