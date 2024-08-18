@@ -183,22 +183,54 @@ function allowOtherPlayerToAnswer(playerNumber) {
 }
 
 function updateScore(playerNumber, points) {
+    console.log(`Updating score for Player ${playerNumber}`);
+    console.log(`Points to add: ${points}`);
+
     if (playerNumber === 1) {
         player1Score += points;
+        console.log(`New Player 1 score: ${player1Score}`);
         document.getElementById('player1-score').innerText = player1Score;
+
+        // Actualizar los puntos del oponente en la pantalla de Player 2
         let player2Mirror = document.getElementById('player1-score-mirror');
         if (player2Mirror) {
-            player2Mirror.innerText = player2Score; // Update mirrored score with opponent's score
+            console.log(`Updating Player 1 score on Player 2's screen: ${player1Score}`);
+            player2Mirror.innerText = player1Score;
+        }
+
+        // Actualizar los puntos de Player 2 en la pantalla de Player 1 (como puntos del oponente)
+        console.log(`Current Player 2 score: ${player2Score}`);
+        let player2ScoreElement = document.getElementById('player2-score-mirror');
+        if (player2ScoreElement) {
+            player2ScoreElement.innerText = player2Score;
+        } else {
+            console.log('Element player2-score-mirror not found!');
         }
     } else {
         player2Score += points;
+        console.log(`New Player 2 score: ${player2Score}`);
         document.getElementById('player2-score').innerText = player2Score;
+
+        // Actualizar los puntos del oponente en la pantalla de Player 1
         let player1Mirror = document.getElementById('player2-score-mirror');
         if (player1Mirror) {
-            player1Mirror.innerText = player1Score; // Update mirrored score with opponent's score
+            console.log(`Updating Player 2 score on Player 1's screen: ${player2Score}`);
+            player1Mirror.innerText = player2Score;
+        }
+
+        // Actualizar los puntos de Player 1 en la pantalla de Player 2 (como puntos del oponente)
+        console.log(`Current Player 1 score: ${player1Score}`);
+        let player1ScoreElement = document.getElementById('player1-score-mirror');
+        if (player1ScoreElement) {
+            player1ScoreElement.innerText = player1Score;
+        } else {
+            console.log('Element player1-score-mirror not found!');
         }
     }
 }
+
+
+
 
 function proceedToNextRound() {
     roundsLeft--;
