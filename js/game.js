@@ -10,15 +10,19 @@ let playersWhoAnswered = 0; // Para rastrear cuántos jugadores han respondido
 let timers = {}; // Almacenar temporizadores para cada jugador
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Content Loaded');
     fetchQuestions().then(() => {
+        console.log('Questions fetched');
         setupGame();
     });
 });
 
 async function fetchQuestions() {
     try {
+        console.log('Fetching questions...');
         const response = await fetch('questions.json'); // Ruta al archivo JSON
         questions = await response.json();
+        console.log('Questions loaded:', questions);
         shuffleArray(questions);
     } catch (error) {
         console.error('Error al cargar las preguntas:', error);
@@ -26,19 +30,26 @@ async function fetchQuestions() {
 }
 
 function setupGame() {
+    console.log('Setting up the game');
     setQuestion();
     enableButton('bigRedButton1');
     enableButton('bigRedButton2');
 
     document.getElementById('bigRedButton1').addEventListener('click', () => {
+        console.log('Big Red Button 1 clicked');
+        redButtonSound.play();  // Reproduce el sonido del botón rojo
         startPlayerTurn(1, 5); // Jugador 1 con 5 segundos
     });
+
     document.getElementById('bigRedButton2').addEventListener('click', () => {
+        console.log('Big Red Button 2 clicked');
+        redButtonSound.play();  // Reproduce el sonido del botón rojo
         startPlayerTurn(2, 5); // Jugador 2 con 5 segundos
     });
 }
 
 function setQuestion() {
+    console.log('Setting question:', questions[currentQuestionIndex]);
     let currentQuestion = questions[currentQuestionIndex];
     let shuffledAnswers = shuffleArray(currentQuestion.answers);
 
@@ -75,11 +86,16 @@ function setQuestion() {
 }
 
 function startPlayerTurn(playerNumber, timeLimit) {
+    console.log(`Player ${playerNumber} starts turn with ${timeLimit} seconds`);
     currentPlayer = playerNumber;
     let otherPlayer = playerNumber === 1 ? 2 : 1;
 
     // Detener el sonido de tick-tock cuando se presiona el botón rojo
     stopTickTockSound();
+
+    // Detener cualquier temporizador que pueda estar corriendo
+    clearTimeout(timers[playerNumber]);
+    clearTimeout(timers[otherPlayer]);
 
     // Deshabilitar los botones del otro jugador
     disableAnswerButtons(otherPlayer);
@@ -92,13 +108,15 @@ function startPlayerTurn(playerNumber, timeLimit) {
     // Mostrar mensaje de que el jugador tiene un tiempo limitado para responder
     showMessage(playerNumber, `Tienes ${timeLimit} segundos para responder`, timeLimit * 1000);
 
-    // Iniciar el contador de tiempo
+    // Iniciar el temporizador solo cuando los botones están habilitados
     timers[playerNumber] = setTimeout(() => {
+        console.log(`Player ${playerNumber} timed out`);
         handlePlayerTimeout(playerNumber);
     }, timeLimit * 1000);
 }
 
 function enableAnswerButtons(playerNumber) {
+    console.log(`Enabling answer buttons for player ${playerNumber}`);
     for (let i = 1; i <= 4; i++) {
         let button = document.getElementById(`answer${playerNumber}-${i}`);
         button.disabled = false;
@@ -106,9 +124,11 @@ function enableAnswerButtons(playerNumber) {
         button.classList.add('enabled');
         button.addEventListener('click', handleAnswerClick);
     }
+    // Iniciar el temporizador aquí si es necesario
 }
 
 function disableAnswerButtons(playerNumber) {
+    console.log(`Disabling answer buttons for player ${playerNumber}`);
     for (let i = 1; i <= 4; i++) {
         let button = document.getElementById(`answer${playerNumber}-${i}`);
         button.disabled = true;
@@ -116,9 +136,12 @@ function disableAnswerButtons(playerNumber) {
         button.classList.remove('enabled');
         button.removeEventListener('click', handleAnswerClick);
     }
+    // Detener el temporizador aquí si es necesario
+    clearTimeout(timers[playerNumber]);
 }
 
 function handleAnswerClick(event) {
+    console.log('Answer button clicked');
     let button = event.target;
     let playerNumber = currentPlayer;
 
@@ -126,38 +149,47 @@ function handleAnswerClick(event) {
     clearTimeout(timers[playerNumber]);
 
     let isCorrect = button.classList.contains('correctAnswer');
+
     if (isCorrect) {
+        console.log('Correct answer selected');
         playCorrectSound();
         updateScore(playerNumber, 10);
         showMessage(playerNumber, 'Respuesta correcta +10 puntos');
+        
+        // Si la respuesta es correcta, procedemos directamente a la siguiente ronda
         proceedToNextRound();
     } else {
-        playIncorrectSound();
+        console.log('Incorrect answer selected');
+        playIncorrectSound();  // Reproducir el sonido de respuesta incorrecta
         button.style.backgroundColor = 'red';
         updateScore(playerNumber, -10);
         showMessage(playerNumber, 'Respuesta incorrecta -10 puntos');
-        allowOtherPlayerToAnswer(playerNumber);
+        
+        // Incrementa el contador de jugadores que han respondido
+        playersWhoAnswered++;
+
+        if (playersWhoAnswered < 2) {
+            allowOtherPlayerToAnswer(playerNumber);
+        } else {
+            proceedToNextRound(); // Si ambos jugadores han respondido incorrectamente, procedemos a la siguiente ronda
+        }
     }
 }
 
-function handlePlayerTimeout(playerNumber) {
-    playIncorrectSound();
-    updateScore(playerNumber, -10);
-    showMessage(playerNumber, 'No respondiste a tiempo -10 puntos');
-    allowOtherPlayerToAnswer(playerNumber);
-}
 
 function allowOtherPlayerToAnswer(playerNumber) {
-    playersWhoAnswered++;
-    if (playersWhoAnswered === 2) {
-        proceedToNextRound();
-    } else {
+    console.log(`Player ${playerNumber} has answered, playersWhoAnswered: ${playersWhoAnswered}`);
+    if (playersWhoAnswered < 2) {
         let otherPlayer = playerNumber === 1 ? 2 : 1;
         startPlayerTurn(otherPlayer, 30); // El otro jugador tiene 30 segundos
+    } else {
+        proceedToNextRound();
     }
 }
 
+
 function updateScore(playerNumber, points) {
+    console.log(`Updating score for player ${playerNumber} by ${points} points`);
     if (playerNumber === 1) {
         player1Score += points;
         document.getElementById('player1-score').innerText = player1Score;
@@ -170,6 +202,7 @@ function updateScore(playerNumber, points) {
 }
 
 function proceedToNextRound() {
+    console.log('Proceeding to next round');
     roundsLeft--;
     document.getElementById('rounds-left').innerText = roundsLeft;
     document.getElementById('rounds-left-mirror').innerText = roundsLeft;
@@ -187,6 +220,7 @@ function proceedToNextRound() {
 }
 
 function endGame() {
+    console.log('Ending game');
     let message;
     if (player1Score > player2Score) {
         message = 'Jugador 1 gana';
@@ -201,6 +235,7 @@ function endGame() {
 }
 
 function disableButton(buttonId) {
+    console.log(`Disabling button ${buttonId}`);
     let button = document.getElementById(buttonId);
     button.disabled = true;
     button.classList.add('disabled');
@@ -208,6 +243,7 @@ function disableButton(buttonId) {
 }
 
 function enableButton(buttonId) {
+    console.log(`Enabling button ${buttonId}`);
     let button = document.getElementById(buttonId);
     button.disabled = false;
     button.classList.remove('disabled');
@@ -215,27 +251,21 @@ function enableButton(buttonId) {
 }
 
 function shuffleArray(array) {
+    console.log('Shuffling array');
     return array.sort(() => Math.random() - 0.5);
 }
 
 function showMessage(playerNumber, message, duration = 3000) {
-    const playerSection = document.getElementById(`player${playerNumber}-section`);
-    const messageElement = document.createElement('div');
-    let messageClass = `messageOnScreen ${playerNumber === 1 ? 'top' : 'bottom'} show`;
-
-    if (playerNumber === 2) {
-        messageClass += ' correctOrientation';
-    }
-
-    messageElement.className = messageClass;
-    messageElement.innerText = message;
-    playerSection.appendChild(messageElement);
+    console.log(`Showing message to player ${playerNumber}: ${message}`);
+    const statusElement = document.getElementById(`player${playerNumber}-status`);
+    statusElement.innerText = message;
 
     setTimeout(() => {
-        messageElement.classList.remove('show');
-        setTimeout(() => messageElement.remove(), 500);
+        statusElement.innerText = ''; // Borra el mensaje después de que pase el tiempo indicado
     }, duration);
 }
+
+
 
 
 
