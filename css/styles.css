@@ -1,5 +1,4 @@
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
     background-color: #20232a;
     color: #ffffff;
     display: flex;
@@ -71,8 +70,8 @@ body {
 .bigRedButton {
     background-color: #d32f2f;
     border: none;
-    width: 20vw;
-    height: 20vw;
+    width: 15vw;
+    height: 15vw;
     margin: 10px auto;
     border-radius: 50%;
     font-size: 4vw;
@@ -162,6 +161,45 @@ body {
     transform: rotate(0deg) !important;
 }
 
+.bigRedButton {
+    background-color: #d32f2f; /* Rojo cuando es presionable */
+    border: none;
+    width: 20vw;
+    height: 20vw;
+    margin: 10px auto;
+    border-radius: 50%;
+    font-size: 4vw;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 6px #b71c1c, 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.bigRedButton.disabled {
+    background-color: #808080; /* Gris cuando no es presionable */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.answerButtons {
+    background: linear-gradient(145deg, #4a4e69, #22223b); /* Color actual cuando es presionable */
+    border: none;
+    width: 22vw;
+    height: 12vw;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 3vw;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #1c1e22, -5px -5px 10px #2e343f;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.answerButtons.disabled {
+    background: #808080; /* Gris cuando no es presionable */
+    cursor: not-allowed;
+    box-shadow: none;
+}
 
 
 
