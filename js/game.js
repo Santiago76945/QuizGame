@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function fetchQuestions() {
     try {
         console.log('Fetching questions...');
-        const response = await fetch('questions.json'); // Ruta al archivo JSON
+        const response = await fetch('/questions.json'); // Ruta al archivo JSON
         questions = await response.json();
         console.log('Questions loaded:', questions);
         shuffleArray(questions);

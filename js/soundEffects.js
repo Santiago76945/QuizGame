@@ -5,6 +5,7 @@ const tickTockSound = new Audio('sounds/tickTockSound.mp3');
 const correctSound = new Audio('sounds/correct.mp3');
 const incorrectSound = new Audio('sounds/incorrect.mp3');
 const redButtonSound = new Audio('sounds/redButton.mp3');
+const backgroundMusic = new Audio('music/quizBackground.mp3');  // Carga de la música de fondo
 
 // Funciones para reproducir sonidos
 function playTickTockSound() {
@@ -27,6 +28,16 @@ function playIncorrectSound() {
 
 function playRedButtonSound() {
     redButtonSound.play();
+}
+
+function playBackgroundMusic() {
+    backgroundMusic.loop = true;  // Hacer que la música de fondo se repita
+    backgroundMusic.play();
+}
+
+// Verificar si la página es /index.html y reproducir la música de fondo
+if (window.location.pathname === '/index.html') {
+    playBackgroundMusic();
 }
 
 // Exponer funciones globalmente
