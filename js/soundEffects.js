@@ -1,11 +1,11 @@
 // soundEffects.js
 
 // Carga de sonidos
-const tickTockSound = new Audio('sounds/tickTockSound.mp3');
-const correctSound = new Audio('sounds/correct.mp3');
-const incorrectSound = new Audio('sounds/incorrect.mp3');
-const redButtonSound = new Audio('sounds/redButton.mp3');
-const backgroundMusic = new Audio('music/quizBackground.mp3');  // Carga de la música de fondo
+const tickTockSound = new Audio('/sounds/tickTockSound.mp3');
+const correctSound = new Audio('/sounds/correct.mp3');
+const incorrectSound = new Audio('/sounds/incorrect.mp3');
+const redButtonSound = new Audio('/sounds/redButton.mp3');
+const backgroundMusic = new Audio('/music/quizBackground.mp3');  // Carga de la música de fondo
 
 // Funciones para reproducir sonidos
 function playTickTockSound() {
