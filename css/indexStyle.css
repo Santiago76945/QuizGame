@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffd700, #000000); /* Degradado de dorado a negro */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 .menu-container {
     display: flex;
     flex-direction: column;
@@ -11,89 +20,109 @@
     align-items: center;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(135deg, #1a1a2e, #16213e); /* Fondo más oscuro con tonos azules */
+    position: relative;
+    z-index: 10;  /* Mantiene el contenido en primer plano */
 }
 
-/* Estilos para el contenido del menú */
 .menu-content {
     text-align: center;
     padding: 20px;
-    background: rgba(21, 24, 33, 0.85); /* Fondo más oscuro translúcido */
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Sombra fuerte para profundidad */
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido para la caja */
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     width: 80%;
 }
 
-/* Estilos para el título del menú */
 .menu-title {
-    font-size: 2.8rem;
+    font-size: 3rem;
     font-weight: bold;
-    color: #00e0ff; /* Color neon cyan */
+    color: #ffdd00; /* Amarillo brillante */
     margin-bottom: 20px;
-    text-shadow: 0px 0px 20px rgba(0, 224, 255, 0.8); /* Efecto de brillo neon */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+    animation: titleEntrance 1s ease-out forwards, titlePulse 2s ease-in-out infinite 1s; /* Combinación de animaciones */
 }
 
-/* Estilos para los botones del menú */
-.menu-button {
-    position: relative;
+.menu-button,
+.language-button {
     font-size: 1.4rem;
     font-weight: bold;
     color: #ffffff;
-    background: #000000; /* Fondo negro */
-    border-radius: 30px; /* Borde más redondeado */
-    padding: 15px 30px;
+    background: linear-gradient(135deg, #ffdd00, #ffaa00); /* Degradado amarillo */
+    border-radius: 25px;
+    padding: 15px 35px;
     margin: 10px;
     cursor: pointer;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Para que el pseudo-elemento no se desborde */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    border: 2px solid rgba(255, 255, 255, 0.25); /* Borde fino y translúcido */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para elevar el botón */
+    z-index: 11; /* Asegura que los botones estén por encima del menú y el fondo */
 }
 
-.menu-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 30px;
-    border: 3px solid transparent;
-    background: linear-gradient(to right, #ff4d4d, #4d94ff);
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    transition: background 0.3s ease;
+.menu-button:hover,
+.language-button:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, #ffcc00, #ff9900); /* Cambio de degradado al hacer hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Efectos de hover y foco para los botones */
-.menu-button:hover::before,
-.menu-button:focus::before {
-    background: linear-gradient(90deg, #ff0055, #ff8c00); /* Inversión de colores en hover */
-    box-shadow: 0 4px 8px rgba(255, 85, 136, 0.6); /* Sombra en colores neon */
+.menu-button:active,
+.language-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave al hacer click */
 }
 
-/* Estilos para el texto del pie de página */
 .footer-text {
     margin-top: 20px;
-    font-size: 0.9rem;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.75);
-    padding: 10px;
-    border-radius: 10px;
+    font-size: 1rem;
+    color: #f0f0f0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 15px;
     text-align: center;
     width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .menu-container img {
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Sombra fuerte para la imagen */
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra para la imagen */
 }
 
+.language-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.language-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+
+@keyframes titleEntrance {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes titlePulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

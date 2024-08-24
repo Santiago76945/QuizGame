@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia Veloz - Main Menu</title>
+    <title> TriviaRush - Main Menu</title>
     <link rel="stylesheet" href="/css/indexStyle.css"> <!-- Enlazando el archivo de estilos -->
 
 </head>
+
 <body>
     <div class="menu-container">
         <div class="menu-content">
-            <h1 class="menu-title">Trivia Veloz</h1>
+            <h1 class="menu-title">TriviaRush</h1>
             <img src="/images/illustration2.png" alt="">
             <button class="menu-button" onclick="startGame()">Jugar</button>
             <button class="menu-button" onclick="openSettings()">Ajustes</button>
             <button class="menu-button" onclick="changePlayerNames()">Cambiar nombre de los jugadores</button>
+
         </div>
         <div class="footer-text">
             <p>Este juego pertenece a Santiago Haspert, todos los derechos reservados.</p>
         </div>
+
+        <div class="language-buttons">
+            <button class="language-button" onclick="setLanguage('es')">Español 🇪🇸</button>
+            <button class="language-button" onclick="setLanguage('en')">English 🇺🇸</button>
+        </div>
     </div>
+
 
     <script src="/js/soundEffects.js"></script>
     <script src="/js/playersInfo.js"></script>
     <script src="/js/settings.js"></script>
     <script src="/js/dynamicBackground.js"></script>
-    
+    <script src="/js/languageSelecton.js"></script>
+
     <script>
         function startGame() {
             window.location.href = '/pages/game.html';
@@ -34,12 +44,7 @@
         function openSettings() {
             alert('Open Settings clicked');
         }
-
-        function changePlayerNames() {
-            alert('Change Player Names clicked');
-        }
     </script>
 </body>
+
 </html>
-
-
