@@ -12,29 +12,26 @@
 <body>
     <div class="menu-container">
         <div class="menu-content">
-            <h1 class="menu-title">TriviaRush</h1>
+            <img src="/images/triviaRushLogo.png" alt="">
             <img src="/images/illustration2.png" alt="">
-            <button class="menu-button" onclick="startGame()">Jugar</button>
-            <button class="menu-button" onclick="openSettings()">Ajustes</button>
-            <button class="menu-button" onclick="changePlayerNames()">Cambiar nombre de los jugadores</button>
-
+            <button class="menu-button play-button" onclick="startGame()">Jugar</button>
+            <button class="menu-button settings-button" onclick="openSettings()">Ajustes</button>
+            <button class="menu-button change-name-button" onclick="changePlayerNames()">Cambiar nombre de los jugadores</button>
+            <div class="language-buttons">
+                <button class="language-button" onclick="setLanguage('es')">Español 🇪🇸</button>
+                <button class="language-button" onclick="setLanguage('en')">English 🇺🇸</button>
+            </div>
         </div>
         <div class="footer-text">
             <p>Este juego pertenece a Santiago Haspert, todos los derechos reservados.</p>
         </div>
-
-        <div class="language-buttons">
-            <button class="language-button" onclick="setLanguage('es')">Español 🇪🇸</button>
-            <button class="language-button" onclick="setLanguage('en')">English 🇺🇸</button>
-        </div>
     </div>
-
 
     <script src="/js/soundEffects.js"></script>
     <script src="/js/playersInfo.js"></script>
     <script src="/js/settings.js"></script>
-    <script src="/js/dynamicBackground.js"></script>
     <script src="/js/languageSelecton.js"></script>
+    <script src="/js/dynamicBackground.js"></script>
 
     <script>
         function startGame() {
