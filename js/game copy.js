@@ -7,9 +7,6 @@ let currentPlayer = null; // Para rastrear quién está respondiendo
 let playersWhoAnswered = 0; // Para rastrear cuántos jugadores han respondido
 let timers = {}; // Almacenar temporizadores para cada jugador
 
-let player1Answers = [];
-let player2Answers = [];
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente cargado y analizado, iniciando fetch de preguntas.");
     fetchQuestions().then(() => {
@@ -122,13 +119,11 @@ function handleAnswerClick(event) {
 
     let isCorrect = button.classList.contains('correctAnswer');
 
-    storeAnswer(playerNumber, questions[currentQuestionIndex].question, button.innerText, isCorrect);
-
     if (isCorrect) {
         console.log(`Jugador ${playerNumber} respondió correctamente.`);
         playCorrectSound();
         updateScore(playerNumber, 10);
-        showMessage(playerNumber, '¡Respuesta correcta!', 3);  // Mostrar el mensaje durante 3 segundos
+        showMessage(playerNumber, 'Respuesta correcta!', 3);  // Mostrar el mensaje durante 3 segundos
 
         let otherPlayer = playerNumber === 1 ? 2 : 1;
         showMessage(otherPlayer, 'El jugador contrario respondió bien, perdiste la ronda.', 3);
@@ -157,15 +152,6 @@ function handleAnswerClick(event) {
     }
 }
 
-function storeAnswer(playerNumber, question, answer, isCorrect) {
-    let answerRecord = { question, answer, isCorrect };
-    if (playerNumber === 1) {
-        player1Answers.push(answerRecord);
-    } else {
-        player2Answers.push(answerRecord);
-    }
-}
-
 function updateScore(playerNumber, points) {
     if (playerNumber === 1) {
         player1Score += points;
@@ -182,21 +168,26 @@ function updateScore(playerNumber, points) {
 
 function endGame() {
     console.log("El juego ha terminado, determinando el ganador.");
-
-    let winnerMessage = '';
+    let message;
     if (player1Score > player2Score) {
-        winnerMessage = '¡Jugador 1 es el ganador!';
+        message = 'Ganaste!';
+        showMessage(1, message, 5000);
+        showMessage(2, 'Perdiste', 5000);
+        console.log("Jugador 1 ganó el juego.");
     } else if (player2Score > player1Score) {
-        winnerMessage = '¡Jugador 2 es el ganador!';
+        message = 'Ganaste!';
+        showMessage(2, message, 5000);
+        showMessage(1, 'Perdiste', 5000);
+        console.log("Jugador 2 ganó el juego.");
     } else {
-        winnerMessage = '¡Es un empate!';
+        message = 'Empate';
+        showMessage(1, message, 5000);
+        showMessage(2, message, 5000);
+        console.log("El juego terminó en empate.");
     }
-
-    localStorage.setItem('player1Results', JSON.stringify(player1Answers));
-    localStorage.setItem('player2Results', JSON.stringify(player2Answers));
-    localStorage.setItem('winnerMessage', winnerMessage);
-
-    window.location.href = '/pages/results.html';
+    setTimeout(() => {
+        alert('El juego ha terminado');
+    }, 5000);
 }
 
 function disableButton(buttonId) {
@@ -257,7 +248,7 @@ function handlePlayerTimeout(playerNumber, timeLimit) {
     let otherPlayer = playerNumber === 1 ? 2 : 1;
     console.log(`El siguiente turno será para el Jugador ${otherPlayer}.`);
 
-    showMessage(playerNumber, '¡Se acabó tu tiempo!', 5);  // Usar un mensaje fijo
+    showMessage(playerNumber, 'Se acabó tu tiempo!', 5);  // Usar un mensaje fijo
     showMessage(otherPlayer, 'El otro jugador no respondió a tiempo, es tu turno.', 5);
 
     playersWhoAnswered++;
@@ -325,6 +316,7 @@ function proceedToNextRound() {
         }, 10000); // Espera exactamente 10 segundos
     }
 }
+
 
 function setQuestion() {
     console.log("Configurando nueva pregunta.");

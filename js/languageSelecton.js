@@ -35,3 +35,4 @@ function updateTexts() {
 
 // Llamar a updateTexts para aplicar el idioma por defecto al cargar la página
 updateTexts();
+
