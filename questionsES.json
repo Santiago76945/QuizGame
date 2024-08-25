@@ -178,6 +178,458 @@
             { "text": "Español", "correct": false },
             { "text": "Hindú", "correct": false }
         ]
+    },
+    {
+        "question": "¿Cuál es la capital de Japón?",
+        "answers": [
+            { "text": "Tokio", "correct": true },
+            { "text": "Kioto", "correct": false },
+            { "text": "Osaka", "correct": false },
+            { "text": "Nagoya", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Quién escribió 'Don Quijote de la Mancha'?",
+        "answers": [
+            { "text": "Miguel de Cervantes", "correct": true },
+            { "text": "Lope de Vega", "correct": false },
+            { "text": "Garcilaso de la Vega", "correct": false },
+            { "text": "Tirso de Molina", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el océano más grande del mundo?",
+        "answers": [
+            { "text": "Atlántico", "correct": false },
+            { "text": "Índico", "correct": false },
+            { "text": "Pacífico", "correct": true },
+            { "text": "Ártico", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país ganó la Copa Mundial de Fútbol en 2018?",
+        "answers": [
+            { "text": "Brasil", "correct": false },
+            { "text": "Francia", "correct": true },
+            { "text": "Alemania", "correct": false },
+            { "text": "Argentina", "correct": false }
+        ]
+    },
+    {
+        "question": "¿En qué año el hombre llegó a la Luna?",
+        "answers": [
+            { "text": "1965", "correct": false },
+            { "text": "1969", "correct": true },
+            { "text": "1971", "correct": false },
+            { "text": "1975", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es la ciudad más poblada de Estados Unidos?",
+        "answers": [
+            { "text": "Los Ángeles", "correct": false },
+            { "text": "Nueva York", "correct": true },
+            { "text": "Chicago", "correct": false },
+            { "text": "Houston", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué elemento tiene el símbolo químico 'O'?",
+        "answers": [
+            { "text": "Oro", "correct": false },
+            { "text": "Oxígeno", "correct": true },
+            { "text": "Osmio", "correct": false },
+            { "text": "Oganesón", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el país más grande del mundo por superficie?",
+        "answers": [
+            { "text": "Canadá", "correct": false },
+            { "text": "Rusia", "correct": true },
+            { "text": "China", "correct": false },
+            { "text": "Estados Unidos", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Quién fue el primer presidente de Estados Unidos?",
+        "answers": [
+            { "text": "John Adams", "correct": false },
+            { "text": "George Washington", "correct": true },
+            { "text": "Thomas Jefferson", "correct": false },
+            { "text": "James Madison", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el planeta más cercano al Sol?",
+        "answers": [
+            { "text": "Venus", "correct": false },
+            { "text": "Mercurio", "correct": true },
+            { "text": "Marte", "correct": false },
+            { "text": "Júpiter", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país es conocido por su torre inclinada?",
+        "answers": [
+            { "text": "Francia", "correct": false },
+            { "text": "Italia", "correct": true },
+            { "text": "España", "correct": false },
+            { "text": "Alemania", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el idioma oficial de Brasil?",
+        "answers": [
+            { "text": "Español", "correct": false },
+            { "text": "Portugués", "correct": true },
+            { "text": "Inglés", "correct": false },
+            { "text": "Francés", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué gas es esencial para la respiración humana?",
+        "answers": [
+            { "text": "Dióxido de carbono", "correct": false },
+            { "text": "Oxígeno", "correct": true },
+            { "text": "Nitrógeno", "correct": false },
+            { "text": "Helio", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el río más largo de África?",
+        "answers": [
+            { "text": "El Congo", "correct": false },
+            { "text": "El Nilo", "correct": true },
+            { "text": "El Níger", "correct": false },
+            { "text": "El Zambeze", "correct": false }
+        ]
+    },
+    {
+        "question": "¿En qué continente se encuentra el desierto del Sahara?",
+        "answers": [
+            { "text": "Asia", "correct": false },
+            { "text": "África", "correct": true },
+            { "text": "Australia", "correct": false },
+            { "text": "América del Norte", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el idioma más hablado en el mundo?",
+        "answers": [
+            { "text": "Español", "correct": false },
+            { "text": "Inglés", "correct": false },
+            { "text": "Mandarín", "correct": true },
+            { "text": "Hindi", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Quién fue el autor de 'La Odisea'?",
+        "answers": [
+            { "text": "Platón", "correct": false },
+            { "text": "Homero", "correct": true },
+            { "text": "Aristóteles", "correct": false },
+            { "text": "Sófocles", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es la moneda oficial de Japón?",
+        "answers": [
+            { "text": "Yen", "correct": true },
+            { "text": "Dólar", "correct": false },
+            { "text": "Won", "correct": false },
+            { "text": "Euro", "correct": false }
+        ]
+    },
+    {
+        "question": "¿En qué país se encuentra la Torre Eiffel?",
+        "answers": [
+            { "text": "Italia", "correct": false },
+            { "text": "Francia", "correct": true },
+            { "text": "Reino Unido", "correct": false },
+            { "text": "España", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el metal más ligero?",
+        "answers": [
+            { "text": "Aluminio", "correct": false },
+            { "text": "Litio", "correct": true },
+            { "text": "Plomo", "correct": false },
+            { "text": "Cobre", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Quién fue el primer ministro del Reino Unido durante la Segunda Guerra Mundial?",
+        "answers": [
+            { "text": "Neville Chamberlain", "correct": false },
+            { "text": "Winston Churchill", "correct": true },
+            { "text": "Margaret Thatcher", "correct": false },
+            { "text": "David Lloyd George", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país tiene el mayor número de islas?",
+        "answers": [
+            { "text": "Indonesia", "correct": false },
+            { "text": "Suecia", "correct": true },
+            { "text": "Filipinas", "correct": false },
+            { "text": "Japón", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el animal terrestre más rápido?",
+        "answers": [
+            { "text": "Leopardo", "correct": false },
+            { "text": "Guepardo", "correct": true },
+            { "text": "Antílope", "correct": false },
+            { "text": "Cebra", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué científico desarrolló la teoría de la evolución?",
+        "answers": [
+            { "text": "Isaac Newton", "correct": false },
+            { "text": "Charles Darwin", "correct": true },
+            { "text": "Albert Einstein", "correct": false },
+            { "text": "Galileo Galilei", "correct": false }
+        ]
+   
+
+ },
+    {
+        "question": "¿Cuál es el país más pequeño del mundo?",
+        "answers": [
+            { "text": "Liechtenstein", "correct": false },
+            { "text": "Mónaco", "correct": false },
+            { "text": "Ciudad del Vaticano", "correct": true },
+            { "text": "San Marino", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué gas es el más abundante en la atmósfera terrestre?",
+        "answers": [
+            { "text": "Oxígeno", "correct": false },
+            { "text": "Nitrógeno", "correct": true },
+            { "text": "Dióxido de carbono", "correct": false },
+            { "text": "Argón", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué filósofo griego fue maestro de Alejandro Magno?",
+        "answers": [
+            { "text": "Platón", "correct": false },
+            { "text": "Aristóteles", "correct": true },
+            { "text": "Sócrates", "correct": false },
+            { "text": "Epicuro", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el desierto más grande del mundo?",
+        "answers": [
+            { "text": "Desierto del Sahara", "correct": false },
+            { "text": "Desierto de Gobi", "correct": false },
+            { "text": "Desierto de la Antártida", "correct": true },
+            { "text": "Desierto de Arabia", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país es famoso por sus canguros?",
+        "answers": [
+            { "text": "Nueva Zelanda", "correct": false },
+            { "text": "Australia", "correct": true },
+            { "text": "Sudáfrica", "correct": false },
+            { "text": "Brasil", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué famoso físico propuso la teoría de la relatividad?",
+        "answers": [
+            { "text": "Isaac Newton", "correct": false },
+            { "text": "Albert Einstein", "correct": true },
+            { "text": "Stephen Hawking", "correct": false },
+            { "text": "Galileo Galilei", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el país más poblado del mundo?",
+        "answers": [
+            { "text": "India", "correct": false },
+            { "text": "China", "correct": true },
+            { "text": "Estados Unidos", "correct": false },
+            { "text": "Brasil", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Quién es el autor de 'Romeo y Julieta'?",
+        "answers": [
+            { "text": "Charles Dickens", "correct": false },
+            { "text": "William Shakespeare", "correct": true },
+            { "text": "Mark Twain", "correct": false },
+            { "text": "Jane Austen", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué continente tiene la mayor cantidad de países?",
+        "answers": [
+            { "text": "Asia", "correct": false },
+            { "text": "África", "correct": true },
+            { "text": "Europa", "correct": false },
+            { "text": "América", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país es conocido por la Torre de Pisa?",
+        "answers": [
+            { "text": "Francia", "correct": false },
+            { "text": "Italia", "correct": true },
+            { "text": "España", "correct": false },
+            { "text": "Grecia", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué animal es el símbolo de WWF?",
+        "answers": [
+            { "text": "Tigre", "correct": false },
+            { "text": "Panda", "correct": true },
+            { "text": "Elefante", "correct": false },
+            { "text": "Águila", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué ciudad es conocida como 'La Ciudad Eterna'?",
+        "answers": [
+            { "text": "Atenas", "correct": false },
+            { "text": "Roma", "correct": true },
+            { "text": "Jerusalén", "correct": false },
+            { "text": "París", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país inventó el papel?",
+        "answers": [
+            { "text": "Egipto", "correct": false },
+            { "text": "China", "correct": true },
+            { "text": "India", "correct": false },
+            { "text": "Grecia", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el nombre científico del ser humano?",
+        "answers": [
+            { "text": "Homo erectus", "correct": false },
+            { "text": "Homo sapiens", "correct": true },
+            { "text": "Homo habilis", "correct": false },
+            { "text": "Homo neanderthalensis", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país es el mayor productor de café del mundo?",
+        "answers": [
+            { "text": "Colombia", "correct": false },
+            { "text": "Brasil", "correct": true },
+            { "text": "Vietnam", "correct": false },
+            { "text": "Etiopía", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué órgano humano es responsable de bombear sangre?",
+        "answers": [
+            { "text": "Pulmón", "correct": false },
+            { "text": "Corazón", "correct": true },
+            { "text": "Riñón", "correct": false },
+            { "text": "Hígado", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué planeta es conocido como el 'planeta rojo'?",
+        "answers": [
+            { "text": "Venus", "correct": false },
+            { "text": "Marte", "correct": true },
+            { "text": "Júpiter", "correct": false },
+            { "text": "Saturno", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué ciudad es conocida como la 'Gran Manzana'?",
+        "answers": [
+            { "text": "Los Ángeles", "correct": false },
+            { "text": "Nueva York", "correct": true },
+            { "text": "Chicago", "correct": false },
+            { "text": "San Francisco", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país es famoso por la Torre Eiffel?",
+        "answers": [
+            { "text": "España", "correct": false },
+            { "text": "Francia", "correct": true },
+            { "text": "Reino Unido", "correct": false },
+            { "text": "Alemania", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es el país más grande de América del Sur?",
+        "answers": [
+            { "text": "Argentina", "correct": false },
+            { "text": "Brasil", "correct": true },
+            { "text": "Chile", "correct": false },
+            { "text": "Perú", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Quién es conocido como el 'Padre de la Física Moderna'?",
+        "answers": [
+            { "text": "Isaac Newton", "correct": true },
+            { "text": "Albert Einstein", "correct": false },
+            { "text": "Galileo Galilei", "correct": false },
+            { "text": "Niels Bohr", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué escritor escribió 'El Principito'?",
+        "answers": [
+            { "text": "Gabriel García Márquez", "correct": false },
+            { "text": "Antoine de Saint-Exupéry", "correct": true },
+            { "text": "Julio Cortázar", "correct": false },
+            { "text": "J.K. Rowling", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país es conocido por sus relojes de cuco?",
+        "answers": [
+            { "text": "Alemania", "correct": true },
+            { "text": "Suiza", "correct": false },
+            { "text": "Francia", "correct": false },
+            { "text": "Austria", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué planeta tiene más lunas?",
+        "answers": [
+            { "text": "Saturno", "correct": true },
+            { "text": "Júpiter", "correct": false },
+            { "text": "Marte", "correct": false },
+            { "text": "Neptuno", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Cuál es la capital de Canadá?",
+        "answers": [
+            { "text": "Toronto", "correct": false },
+            { "text": "Ottawa", "correct": true },
+            { "text": "Montreal", "correct": false },
+            { "text": "Vancouver", "correct": false }
+        ]
+    },
+    {
+        "question": "¿Qué país es conocido como la tierra de los tulipanes?",
+        "answers": [
+            { "text": "Francia", "correct": false },
+            { "text": "Países Bajos", "correct": true },
+            { "text": "Bélgica", "correct": false },
+            { "text": "Suiza", "correct": false }
+        ]
     }
 ]
 
