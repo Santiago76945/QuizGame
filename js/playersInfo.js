@@ -17,8 +17,8 @@ export function changePlayerNames() {
         }
     };
 
-    const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-    const prompts = texts[selectedLanguage] || texts.es;
+    const selectedLanguage = localStorage.getItem('selectedLanguage') || 'es';
+    const prompts = texts[selectedLanguage];
 
     const newPlayer1Name = prompt(prompts.player1Prompt, player1Name);
     const newPlayer2Name = prompt(prompts.player2Prompt, player2Name);
@@ -34,6 +34,7 @@ export function changePlayerNames() {
 
     console.log(`Jugador 1: ${player1Name}`);
     console.log(`Jugador 2: ${player2Name}`);
+    setPlayerNames();  // Actualizar los nombres en la interfaz
 }
 
 // Función para establecer los nombres de los jugadores en el DOM
@@ -42,11 +43,15 @@ export function setPlayerNames() {
     const player2NameElement = document.getElementById('player2-name');
 
     // Actualizar los nombres en la interfaz
-    player1NameElement.textContent = player1Name;
-    player2NameElement.textContent = player2Name;
+    if (player1NameElement && player2NameElement) {
+        player1NameElement.textContent = player1Name;
+        player2NameElement.textContent = player2Name;
+    }
 
     console.log('Nombres de jugadores establecidos en el DOM.');
 }
 
+// Inicializar los nombres de los jugadores al cargar la página
+document.addEventListener('DOMContentLoaded', setPlayerNames);
 
 

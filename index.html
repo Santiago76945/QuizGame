@@ -15,7 +15,7 @@
             <img src="/images/illustration2.png" alt="Ilustración de jugadores" class="menu-illustration">
             <button class="menu-button play-button" onclick="startGame()">Jugar</button><br>
             <button class="menu-button settings-button" onclick="openSettings()">Ajustes</button><br>
-            <button class="menu-button change-name-button" onclick="changePlayerNames()">Cambiar nombre de los jugadores</button><br>
+            <button class="menu-button change-name-button" id="change-name-button">Cambiar nombre de los jugadores</button><br>
             <div class="language-buttons"><br>
                 <button class="language-button" onclick="setLanguage('es')">Español 🇪🇸</button>
                 <button class="language-button" onclick="setLanguage('en')">English 🇺🇸</button>
@@ -27,12 +27,6 @@
     </div>
 
     <script src="/js/soundEffects.js"></script>
-    <script type="module" src="/js/playersInfo.js"></script>
-    <script src="/js/settings.js"></script>
-    <script src="/js/languageSelection.js"></script>
-    <script src="/js/dynamicBackground.js"></script>
-
-
     <script>
         function startGame() {
             window.location.href = '/pages/game.html';
@@ -42,6 +36,13 @@
             alert('Open Settings clicked');
         }
     </script>
+    <script type="module">
+        import { changePlayerNames } from '/js/playersInfo.js';
+
+        document.getElementById('change-name-button').addEventListener('click', changePlayerNames);
+    </script>
+    <script src="/js/languageSelection.js"></script>
+    <script src="/js/dynamicBackground.js"></script>
 </body>
 
 </html>
