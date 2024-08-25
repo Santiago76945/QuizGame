@@ -1,57 +1,207 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
 body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(90deg, #00e5ff, #ff7f50); /* Degradado de celeste neón a naranja neón */
     color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
     flex-direction: column;
-    overflow: hidden;
-    background: radial-gradient(circle, #1b1d24 0%, #0d0e12 100%);
-    font-family: 'Roboto', sans-serif;
 }
 
+/* Contenedor principal de los resultados */
 .results-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 80%;
-    background: linear-gradient(180deg, #00172d, #070c1f);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    background: linear-gradient(145deg, #d4af37, #b8860b); /* Degradado dorado */
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 -5px 15px rgba(255, 215, 0, 0.75); /* Sombra dorada y brillo interno */
     text-align: center;
+    background-blend-mode: overlay;
 }
 
+/* Título de resultados */
 .results-title {
-    font-size: 3vw;
+    font-size: 40px;
     margin-bottom: 20px;
-    color: #e0e0e0;
+    color: #ffffff;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
+/* Estilo de cada resultado */
 .result-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin: 10px 0;
-    padding: 10px;
-    background: linear-gradient(145deg, #1f2940, #151a27);
+    padding: 15px;
+    background: rgba(255, 215, 0, 0.8); /* Fondo dorado semitransparente */
     border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5), inset 0px -5px 15px rgba(50, 61, 85, 0.75);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 -5px 15px rgba(218, 165, 32, 0.75); /* Sombra y brillo dorado */
 }
 
 .result-item p {
     font-size: 2vw;
-    color: #e0e0e0;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    color: #000000; /* Texto negro para contraste con el fondo dorado */
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8); /* Sombra suave para resaltar el texto */
 }
 
+/* Mensaje de ganador */
 .winner {
     font-size: 4vw;
-    color: #4dff88;
+    color: #ffffff; /* Verde brillante para el mensaje de ganador */
     margin-top: 20px;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
+
+/* Efecto de partículas flotantes */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    animation: moveParticle 30s linear infinite;
+}
+
+/* Animación de las partículas */
+@keyframes moveParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(-50vw);
+        opacity: 0;
+    }
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al hacer hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-button:active {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo aún más oscuro al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    width: 60%;
+
+}
+
+/* Estilo general */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(90deg, #00e5ff, #ff7f50); /* Degradado de celeste neón a naranja neón */
+    color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px; /* Añadir un padding general para evitar que los elementos queden pegados al borde */
+}
+
+/* Contenedor principal de los resultados */
+.results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 30px; /* Añadir padding interno */
+    background: linear-gradient(145deg, #d4af37, #b8860b); /* Degradado dorado */
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 -5px 15px rgba(255, 215, 0, 0.75); /* Sombra dorada y brillo interno */
+    text-align: center;
+    background-blend-mode: overlay;
+    margin-top: 20px; /* Añadir margen superior para separarlo del borde superior */
+}
+
+/* Título de resultados */
+.results-title {
+    font-size: 40px;
+    margin-bottom: 30px; /* Incrementar el margen inferior para más espacio */
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Imagen del ganador */
+img {
+    width: 60%; /* Reducir el tamaño de la imagen para dejar más espacio */
+}
+
+/* Estilo de cada resultado */
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 15px 0; /* Aumentar el margen para más espacio entre los ítems */
+    padding: 15px;
+    background: rgba(255, 215, 0, 0.8); /* Fondo dorado semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 -5px 15px rgba(218, 165, 32, 0.75); /* Sombra y brillo dorado */
+}
+
+.result-item p {
+    font-size: 2vw;
+    color: #000000; /* Texto negro para contraste con el fondo dorado */
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8); /* Sombra suave para resaltar el texto */
+}
+
+/* Mensaje de ganador */
+.winner {
+    font-size: 4vw;
+    color: #ffffff; /* Verde brillante para el mensaje de ganador */
+    margin-top: 40px; /* Incrementar el margen superior para más espacio antes del mensaje */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
+}
+

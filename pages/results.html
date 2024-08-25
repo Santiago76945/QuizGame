@@ -7,17 +7,27 @@
     <link rel="stylesheet" href="/css/results.css">
 </head>
 <body>
+    <!-- Efecto de Partículas Flotantes -->
+    <div class="particles"></div>
+    
+    <!-- Botón de Volver al Menú Principal -->
+    <a href="/index.html" class="back-button">← Menú Principal</a>
+
     <div class="results-container">
-        <h1 class="results-title">Resultados Finales</h1>
+        <h1 class="results-title">Final Results</h1>
+        <img src="/images/winner.png" alt="">
         <div id="result-items">
             <!-- Aquí se mostrarán los resultados de cada ronda -->
         </div>
         <div id="winner-message" class="winner">
-            <!-- Aquí se mostrará el ganador -->
+            <!-- Aquí se mostrará el ganador con su nombre, puntos y mensaje de felicitación -->
         </div>
     </div>
-    <script src="/js/gameResults.js"></script>
+    <script type="module" src="/js/playersInfo.js"></script>
+    <script type="module" src="/js/gameResults.js"></script>
     <script src="/js/soundEffects.js"></script>
-    <script src="/js/playersInfo.js"></script>
+    <script src="/js/dynamicBackground.js"></script>
 </body>
 </html>
+
+

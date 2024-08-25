@@ -1,7 +1,8 @@
 // languageSelection.js
 
 // Constante global para almacenar el idioma seleccionado
-let selectedLanguage = 'es'; // Valor por defecto en español
+let selectedLanguage = localStorage.getItem('selectedLanguage') || 'es'; // Valor por defecto en español
+console.log(`Idioma seleccionado al iniciar: ${selectedLanguage}`);
 
 // Textos en ambos idiomas
 const texts = {
@@ -21,18 +22,36 @@ const texts = {
 
 // Función para cambiar el idioma y actualizar los textos
 function setLanguage(language) {
+    console.log(`Cambiando idioma a: ${language}`);
     selectedLanguage = language;
-    updateTexts();
+    localStorage.setItem('selectedLanguage', language); // Guardar el idioma seleccionado
+    if (isIndexPage()) {
+        updateTexts();
+    }
+    console.log(`Idioma actual después del cambio: ${selectedLanguage}`);
 }
 
 // Función para actualizar los textos en la página
 function updateTexts() {
+    console.log(`Actualizando textos en la página a: ${selectedLanguage}`);
     document.querySelector('.play-button').textContent = texts[selectedLanguage].playButton;
     document.querySelector('.settings-button').textContent = texts[selectedLanguage].settingsButton;
     document.querySelector('.change-name-button').textContent = texts[selectedLanguage].changeNameButton;
     document.querySelector('.footer-text p').textContent = texts[selectedLanguage].footerText;
+    console.log(`Textos actualizados para el idioma: ${selectedLanguage}`);
 }
 
-// Llamar a updateTexts para aplicar el idioma por defecto al cargar la página
-updateTexts();
+// Función para verificar si estamos en index.html
+function isIndexPage() {
+    const isIndex = window.location.href.includes('index.html') || window.location.pathname === '/';
+    console.log(`¿Estamos en index.html?: ${isIndex}`);
+    return isIndex;
+}
+
+// Llamar a updateTexts solo si estamos en index.html
+if (isIndexPage()) {
+    updateTexts();
+}
+
+
 

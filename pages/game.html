@@ -1,3 +1,5 @@
+<!-- game.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,17 +15,18 @@
         <div class="container">
 
             <div class="player-section mirror" id="player2-section">
-                <p id="dynamic-message-on-screen2" class="status-text large-text">Presiona el botón rojo si sabes la respuesta.</p>
+                <div id="dynamic-message-container2" class="dynamic-message-container">
+                    <p id="dynamic-message-on-screen2" class="status-text large-text"></p>
+                </div>
 
                 <div id="question-container-mirror" class="question-container"></div>
 
-                <!-- Se mueve el scoreboard aquí -->
                 <div class="red-button-and-scoreboard">
                     <button id="bigRedButton2" class="bigRedButton" disabled></button>
                     <div class="scoreboard">
-                        <p>Puntos: <span id="player2-score">0</span></p>
-                        <p>Puntos de tu oponente: <span id="player1-score-mirror">0</span></p>
-                        <p>Rondas restantes: <span id="rounds-left">5</span></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
                     </div>
                 </div>
 
@@ -39,17 +42,18 @@
             <div class="divider"></div>
 
             <div class="player-section" id="player1-section">
-                <p id="dynamic-message-on-screen1" class="status-text large-text">Presiona el botón rojo si sabes la respuesta.</p>
+                <div id="dynamic-message-container1" class="dynamic-message-container">
+                    <p id="dynamic-message-on-screen1" class="status-text large-text"></p>
+                </div>
 
                 <div id="question-container" class="question-container"></div>
 
-                <!-- Se mueve el scoreboard aquí -->
                 <div class="red-button-and-scoreboard">
                     <button id="bigRedButton1" class="bigRedButton" disabled></button>
                     <div class="scoreboard">
-                        <p>Puntos: <span id="player1-score">0</span></p>
-                        <p>Puntos de tu oponente: <span id="player2-score-mirror">0</span></p>
-                        <p>Rondas restantes: <span id="rounds-left-mirror">5</span></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
                     </div>
                 </div>
 
@@ -65,9 +69,14 @@
         </div>
     </div>
 
-    <script src="/js/game.js"></script>
+    <div id="language-display" style="display: none;"></div>
+
+    <script type="module" src="/js/playersInfo.js"></script>
+    <script src="/js/languageSelection.js"></script>
     <script src="/js/soundEffects.js"></script>
+    <script type="module" src="/js/game.js"></script>
 
 </body>
 
 </html>
+

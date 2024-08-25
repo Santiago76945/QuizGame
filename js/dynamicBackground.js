@@ -3,6 +3,7 @@
 function createParticles(numParticles) {
     const particlesContainer = document.createElement('div');
     particlesContainer.className = 'particles';
+    particlesContainer.style.zIndex = '100'; // Aumenta el z-index
     document.body.appendChild(particlesContainer);
 
     for (let i = 0; i < numParticles; i++) {

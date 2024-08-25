@@ -6,10 +6,10 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(90deg, #00e5ff, #ff7f50); /* Degradado de celeste neón a naranja neón */
+    background: linear-gradient(90deg, #121212, #282828); /* Degradado de gris oscuro a negro */
     color: #fff;
     overflow-x: hidden;
-    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -20,28 +20,36 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 20px; /* Añadido para permitir espacio alrededor del contenido */
+    padding: 20px;
     position: relative;
     z-index: 10;
+    background: linear-gradient(90deg, #00e5ff, #ff7f50); /* Degradado de celeste neón a naranja neón */
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Mantén la sombra para dar profundidad */
 }
+
 
 .menu-content {
     text-align: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente para destacar el contenido */
     border-radius: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra más oscura para dar profundidad */
     width: 95%;
     margin-bottom: 20px;
 }
 
-.menu-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffdd00;
+.menu-logo {
+    width: 60%;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
     animation: titleEntrance 1s ease-out forwards, titlePulse 2s ease-in-out infinite 1s;
+}
+
+.menu-illustration {
+    width: 80%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada para mayor contraste */
 }
 
 .menu-button,
@@ -49,46 +57,29 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     color: #ffffff;
-    background: linear-gradient(135deg, #ffdd00, #ffaa00);
-    border-radius: 25px;
-    padding: 15px 35px;
+    background: linear-gradient(135deg, #1e90ff, #8a2be2); /* Degradado de azul a violeta oscuro */
+    border-radius: 30px;
+    padding: 18px 40px;
     margin: 10px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7), 0 0 15px rgba(30, 144, 255, 0.5), 0 0 25px rgba(138, 43, 226, 0.4); /* Efecto de neón en dark mode */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.3);
     z-index: 11;
 }
 
 .menu-button:hover,
 .language-button:hover {
-    transform: translateY(-4px);
-    background: linear-gradient(135deg, #ffcc00, #ff9900);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #4169e1, #9370db); /* Un degradado más vibrante al hacer hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(30, 144, 255, 0.6), 0 0 30px rgba(138, 43, 226, 0.5); /* Más brillo en el efecto de neón */
 }
 
 .menu-button:active,
 .language-button:active {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-.footer-text {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #f0f0f0;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    border-radius: 15px;
-    text-align: center;
-    width: 80%;
-}
-
-.menu-container img {
-    width: 80%;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px) scale(0.98); /* Efecto de rebote al hacer clic */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7), 0 0 12px rgba(30, 144, 255, 0.4), 0 0 20px rgba(138, 43, 226, 0.3); /* Sombra más suave al hacer clic */
 }
 
 .language-buttons {
@@ -101,6 +92,17 @@ body {
     font-size: 1.2rem;
     padding: 10px 20px;
     margin: 0 10px;
+}
+
+.footer-text {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #d3d3d3; /* Color más claro para mayor contraste en dark mode */
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
 }
 
 @keyframes titleEntrance {
@@ -129,65 +131,45 @@ body {
     }
 }
 
-.menu-button,
-.language-button {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(135deg, #ffdd00, #ffaa00);
-    border-radius: 30px; /* Aumenta la redondez */
-    padding: 18px 40px; /* Más padding para hacer los botones más grandes */
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 221, 0, 0.5); /* Sombra y brillo */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Sombra en el texto */
-    z-index: 11;
+/* Contenedor de las partículas */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Las partículas no interferirán con los clics o la interacción del usuario */
+    overflow: hidden;
+    z-index: 1; /* Asegúrate de que esté detrás del contenido principal */
 }
 
-.menu-button:hover,
-.language-button:hover {
-    transform: translateY(-5px);
-    background: linear-gradient(135deg, #ffcc00, #ff9900);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 204, 0, 0.7); /* Más intensidad en la sombra y brillo */
+/* Estilo de cada partícula */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Color de las partículas */
+    border-radius: 50%; /* Hace que las partículas sean circulares */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efecto de brillo */
+    opacity: 0;
+    animation: moveParticle 30s linear infinite;
 }
 
-.menu-button:active,
-.language-button:active {
-    transform: translateY(-2px) scale(0.98); /* Añade un pequeño "rebote" al hacer clic */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 12px rgba(255, 221, 0, 0.6); /* Sombra más suave al hacer clic */
+/* Animación de las partículas */
+@keyframes moveParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(-50vw);
+        opacity: 0;
+    }
 }
 
-
-.menu-button,
-.language-button {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(135deg, #00BFFF, #9400D3); /* Degradado de azul a violeta neón */
-    border-radius: 30px;
-    padding: 18px 40px;
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 191, 255, 0.7), 0 0 25px rgba(148, 0, 211, 0.6); /* Efecto de neón */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.7);
-    z-index: 11;
+.menu-button {
+    width: 95%; /* Ocupa todo el espacio del contenedor */
 }
-
-.menu-button:hover,
-.language-button:hover {
-    transform: translateY(-5px);
-    background: linear-gradient(135deg, #1E90FF, #8A2BE2); /* Un degradado más vibrante al hacer hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 191, 255, 0.8), 0 0 30px rgba(148, 0, 211, 0.7); /* Más brillo en el efecto de neón */
-}
-
-.menu-button:active,
-.language-button:active {
-    transform: translateY(-2px) scale(0.98); /* Efecto de rebote al hacer clic */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 12px rgba(0, 191, 255, 0.6), 0 0 20px rgba(148, 0, 211, 0.5); /* Sombra más suave al hacer clic */
-}
-
-

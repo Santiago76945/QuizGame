@@ -1,0 +1,183 @@
+[
+    {
+        "question": "Who was the first human to travel into space?",
+        "answers": [
+            { "text": "Neil Armstrong", "correct": false },
+            { "text": "Yuri Gagarin", "correct": true },
+            { "text": "John Glenn", "correct": false },
+            { "text": "Valentina Tereshkova", "correct": false }
+        ]
+    },
+    {
+        "question": "In what year did World War I begin?",
+        "answers": [
+            { "text": "1914", "correct": true },
+            { "text": "1918", "correct": false },
+            { "text": "1939", "correct": false },
+            { "text": "1929", "correct": false }
+        ]
+    },
+    {
+        "question": "Which country has the most UNESCO World Heritage Sites?",
+        "answers": [
+            { "text": "China", "correct": true },
+            { "text": "Italy", "correct": false },
+            { "text": "India", "correct": false },
+            { "text": "Spain", "correct": false }
+        ]
+    },
+    {
+        "question": "How many symphonies did Ludwig van Beethoven compose?",
+        "answers": [
+            { "text": "7", "correct": false },
+            { "text": "9", "correct": true },
+            { "text": "11", "correct": false },
+            { "text": "5", "correct": false }
+        ]
+    },
+    {
+        "question": "Which biological molecule is known as 'the energy molecule'?",
+        "answers": [
+            { "text": "DNA", "correct": false },
+            { "text": "ATP", "correct": true },
+            { "text": "RNA", "correct": false },
+            { "text": "Glucose", "correct": false }
+        ]
+    },
+    {
+        "question": "Which ancient civilization built the city of Machu Picchu?",
+        "answers": [
+            { "text": "The Mayans", "correct": false },
+            { "text": "The Incas", "correct": true },
+            { "text": "The Aztecs", "correct": false },
+            { "text": "The Olmecs", "correct": false }
+        ]
+    },
+    {
+        "question": "Which physicist is known for the equation E=mc²?",
+        "answers": [
+            { "text": "Isaac Newton", "correct": false },
+            { "text": "Albert Einstein", "correct": true },
+            { "text": "Niels Bohr", "correct": false },
+            { "text": "Max Planck", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the largest organ in the human body?",
+        "answers": [
+            { "text": "The heart", "correct": false },
+            { "text": "The skin", "correct": true },
+            { "text": "The liver", "correct": false },
+            { "text": "The brain", "correct": false }
+        ]
+    },
+    {
+        "question": "Who painted 'The Last Supper'?",
+        "answers": [
+            { "text": "Michelangelo", "correct": false },
+            { "text": "Leonardo da Vinci", "correct": true },
+            { "text": "Vincent van Gogh", "correct": false },
+            { "text": "Pablo Picasso", "correct": false }
+        ]
+    },
+    {
+        "question": "In which country is the Atacama Desert located?",
+        "answers": [
+            { "text": "Peru", "correct": false },
+            { "text": "Chile", "correct": true },
+            { "text": "Argentina", "correct": false },
+            { "text": "Bolivia", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the capital of Australia?",
+        "answers": [
+            { "text": "Sydney", "correct": false },
+            { "text": "Melbourne", "correct": false },
+            { "text": "Canberra", "correct": true },
+            { "text": "Brisbane", "correct": false }
+        ]
+    },
+    {
+        "question": "Who was the author of the theory of relativity?",
+        "answers": [
+            { "text": "Isaac Newton", "correct": false },
+            { "text": "Albert Einstein", "correct": true },
+            { "text": "Galileo Galilei", "correct": false },
+            { "text": "Stephen Hawking", "correct": false }
+        ]
+    },
+    {
+        "question": "Which country is known as the birthplace of the Renaissance?",
+        "answers": [
+            { "text": "France", "correct": false },
+            { "text": "Italy", "correct": true },
+            { "text": "Greece", "correct": false },
+            { "text": "Germany", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the longest river in the world?",
+        "answers": [
+            { "text": "The Nile", "correct": false },
+            { "text": "The Amazon", "correct": true },
+            { "text": "The Yangtze", "correct": false },
+            { "text": "The Mississippi", "correct": false }
+        ]
+    },
+    {
+        "question": "Which writer is known for the novel 'One Hundred Years of Solitude'?",
+        "answers": [
+            { "text": "Mario Vargas Llosa", "correct": false },
+            { "text": "Gabriel García Márquez", "correct": true },
+            { "text": "Julio Cortázar", "correct": false },
+            { "text": "Pablo Neruda", "correct": false }
+        ]
+    },
+    {
+        "question": "In what year did the Berlin Wall fall?",
+        "answers": [
+            { "text": "1989", "correct": true },
+            { "text": "1991", "correct": false },
+            { "text": "1985", "correct": false },
+            { "text": "1990", "correct": false }
+        ]
+    },
+    {
+        "question": "Which architect designed the Sagrada Familia in Barcelona?",
+        "answers": [
+            { "text": "Frank Lloyd Wright", "correct": false },
+            { "text": "Antoni Gaudí", "correct": true },
+            { "text": "Le Corbusier", "correct": false },
+            { "text": "Oscar Niemeyer", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the most abundant metal in the Earth's crust?",
+        "answers": [
+            { "text": "Iron", "correct": false },
+            { "text": "Aluminum", "correct": true },
+            { "text": "Copper", "correct": false },
+            { "text": "Magnesium", "correct": false }
+        ]
+    },
+    {
+        "question": "Which inventor is known for the invention of the electric light bulb?",
+        "answers": [
+            { "text": "Nikola Tesla", "correct": false },
+            { "text": "Thomas Edison", "correct": true },
+            { "text": "Alexander Graham Bell", "correct": false },
+            { "text": "James Watt", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the most spoken language in the world by number of native speakers?",
+        "answers": [
+            { "text": "English", "correct": false },
+            { "text": "Mandarin", "correct": true },
+            { "text": "Spanish", "correct": false },
+            { "text": "Hindi", "correct": false }
+        ]
+    }
+]
+

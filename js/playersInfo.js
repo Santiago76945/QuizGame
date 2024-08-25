@@ -1,10 +1,11 @@
+//playersInfo.js
+
 // Variables globales para almacenar los nombres de los jugadores
-let player1Name = "Player 1";
-let player2Name = "Player 2";
+export let player1Name = localStorage.getItem('player1Name') || "Player 1";
+export let player2Name = localStorage.getItem('player2Name') || "Player 2";
 
 // Función para cambiar los nombres de los jugadores
-function changePlayerNames() {
-    // Textos para el prompt según el idioma seleccionado
+export function changePlayerNames() {
     const texts = {
         es: {
             player1Prompt: "Ingrese el nombre para el Jugador 1:",
@@ -16,24 +17,36 @@ function changePlayerNames() {
         }
     };
 
-    // Obtener los textos según el idioma seleccionado
-    const prompts = texts[selectedLanguage] || texts.es; // Usa español por defecto si no se encuentra el idioma
+    const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+    const prompts = texts[selectedLanguage] || texts.es;
 
-    // Mostrar un pop-up para que el usuario ingrese los nombres
     const newPlayer1Name = prompt(prompts.player1Prompt, player1Name);
     const newPlayer2Name = prompt(prompts.player2Prompt, player2Name);
 
-    // Si los nombres no están vacíos, actualizarlos
     if (newPlayer1Name) {
         player1Name = newPlayer1Name;
+        localStorage.setItem('player1Name', player1Name);  // Guardar en localStorage
     }
     if (newPlayer2Name) {
         player2Name = newPlayer2Name;
+        localStorage.setItem('player2Name', player2Name);  // Guardar en localStorage
     }
 
-    // Mostrar los nuevos nombres en la consola (o hacer cualquier otra cosa con ellos)
     console.log(`Jugador 1: ${player1Name}`);
     console.log(`Jugador 2: ${player2Name}`);
 }
+
+// Función para establecer los nombres de los jugadores en el DOM
+export function setPlayerNames() {
+    const player1NameElement = document.getElementById('player1-name');
+    const player2NameElement = document.getElementById('player2-name');
+
+    // Actualizar los nombres en la interfaz
+    player1NameElement.textContent = player1Name;
+    player2NameElement.textContent = player2Name;
+
+    console.log('Nombres de jugadores establecidos en el DOM.');
+}
+
 
 

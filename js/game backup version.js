@@ -1,3 +1,5 @@
+//otherScript.js
+
 let questions = [];
 let currentQuestionIndex = 0;
 let roundsLeft = 5;

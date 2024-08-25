@@ -1,50 +1,157 @@
+//game.js
+
+import { player1Name, player2Name, setPlayerNames } from './playersInfo.js';
+
 let questions = [];
 let currentQuestionIndex = 0;
 let roundsLeft = 5;
 let player1Score = 0;
 let player2Score = 0;
-let currentPlayer = null; // Para rastrear quién está respondiendo
-let playersWhoAnswered = 0; // Para rastrear cuántos jugadores han respondido
-let timers = {}; // Almacenar temporizadores para cada jugador
+let currentPlayer = null; 
+let playersWhoAnswered = 0; 
+let timers = {}; 
 
 let player1Answers = [];
 let player2Answers = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente cargado y analizado, iniciando fetch de preguntas.");
+
+    const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+    
+    console.log(`Idioma seleccionado obtenido de localStorage: ${selectedLanguage}`);
+
+    displaySelectedLanguage(true, selectedLanguage);
+
+    setPlayerNames();  // Establece los nombres de los jugadores en el DOM
+
+    console.log(`Nombres de los jugadores: Jugador 1 - ${player1Name}, Jugador 2 - ${player2Name}`);
+
+    updateTextForLanguage(selectedLanguage);  // Actualiza los textos según el idioma
+
     fetchQuestions().then(() => {
-        setupGame();
+        setupGame(selectedLanguage);
     });
 });
+
+function translate(key, selectedLanguage) {
+    const translations = {
+        'press_red_button': {
+            'en': 'Press the red button if you know the answer.',
+            'es': 'Presiona el botón rojo si sabes la respuesta.'
+        },
+        'points': {
+            'en': 'Points',
+            'es': 'Puntos'
+        },
+        'opponent_points': {
+            'en': 'Points of your opponent',
+            'es': 'Puntos de tu oponente'
+        },
+        'rounds_left': {
+            'en': 'Rounds left',
+            'es': 'Rondas restantes'
+        },
+        'correct_answer': {
+            'en': 'Correct answer!',
+            'es': '¡Respuesta correcta!'
+        },
+        'incorrect_answer': {
+            'en': 'Incorrect answer.',
+            'es': 'Respuesta incorrecta.'
+        },
+        'seconds_remaining': {
+            'en': 'seconds remaining',
+            'es': 'segundos restantes'
+        },
+        'opponent_correct': {
+            'en': 'The opponent answered correctly, you lost the round.',
+            'es': 'El jugador contrario respondió bien, perdiste la ronda.'
+        },
+        'time_up': {
+            'en': "Time's up!",
+            'es': '¡Se acabó tu tiempo!'
+        },
+        'your_turn': {
+            'en': "Your turn",
+            'es': 'Es tu turno'
+        },
+        'other_player_turn': {
+            'en': "The other player didn't answer in time, it's your turn.",
+            'es': 'El otro jugador no respondió a tiempo, es tu turno.'
+        },
+        'wait_other_player': {
+            'en': 'Wait for the other player to respond',
+            'es': 'Espera a que el otro jugador responda'
+        },
+        'round_over': {
+            'en': 'Round over, new question in',
+            'es': 'Ronda finalizada, nueva pregunta en'
+        },
+        'winner_message': {
+            'en': 'The winner is',
+            'es': '¡El ganador es'
+        },
+        'draw_message': {
+            'en': "It's a draw!",
+            'es': '¡Es un empate!'
+        },
+        'language_display': {
+            'en': 'Language: ',
+            'es': 'Idioma: '
+        }
+    };
+
+    return translations[key] && translations[key][selectedLanguage] ? translations[key][selectedLanguage] : key;
+}
+
+
+function updateTextForLanguage(selectedLanguage) {
+    document.getElementById('dynamic-message-on-screen1').innerText = translate('press_red_button', selectedLanguage);
+    document.getElementById('dynamic-message-on-screen2').innerText = translate('press_red_button', selectedLanguage);
+    
+    document.querySelector('#player1-section .scoreboard p:nth-child(1)').innerHTML = `${translate('points', selectedLanguage)}: <span id="player1-score">0</span>`;
+    document.querySelector('#player1-section .scoreboard p:nth-child(2)').innerHTML = `${translate('opponent_points', selectedLanguage)}: <span id="player2-score-mirror">0</span>`;
+    document.querySelector('#player1-section .scoreboard p:nth-child(3)').innerHTML = `${translate('rounds_left', selectedLanguage)}: <span id="rounds-left-mirror">5</span>`;
+    
+    document.querySelector('#player2-section .scoreboard p:nth-child(1)').innerHTML = `${translate('points', selectedLanguage)}: <span id="player2-score">0</span>`;
+    document.querySelector('#player2-section .scoreboard p:nth-child(2)').innerHTML = `${translate('opponent_points', selectedLanguage)}: <span id="player1-score-mirror">0</span>`;
+    document.querySelector('#player2-section .scoreboard p:nth-child(3)').innerHTML = `${translate('rounds_left', selectedLanguage)}: <span id="rounds-left">5</span>`;
+    
+    // Añadir más actualizaciones de texto aquí según sea necesario
+}
 
 async function fetchQuestions() {
     console.log("Iniciando fetchQuestions.");
     try {
-        const response = await fetch('/questions.json'); // Ruta al archivo JSON
+        const selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+        const questionsFile = selectedLanguage === 'es' ? '/questionsES.json' : '/questionsEN.json';
+        
+        const response = await fetch(questionsFile); // Ruta al archivo JSON basado en el idioma seleccionado
         questions = await response.json();
         shuffleArray(questions);
-        console.log("Preguntas cargadas y mezcladas:", questions);
+        console.log(`Preguntas cargadas desde ${questionsFile} y mezcladas:`, questions);
     } catch (error) {
         console.error('Error al cargar las preguntas:', error);
     }
 }
 
-function setupGame() {
+function setupGame(selectedLanguage) {
     console.log("Configurando el juego.");
-    setQuestion();
+    setQuestion(selectedLanguage);
     enableButton('bigRedButton1');
     enableButton('bigRedButton2');
 
     document.getElementById('bigRedButton1').addEventListener('click', () => {
-        redButtonSound.play();  // Reproduce el sonido del botón rojo
+        redButtonSound.play().catch((error) => console.error('Error al reproducir el sonido:', error));
         console.log("Botón rojo del Jugador 1 presionado, iniciando su turno.");
-        startPlayerTurn(1, 5); // Jugador 1 con 5 segundos
+        startPlayerTurn(1, 5, selectedLanguage); // Jugador 1 con 5 segundos
     });
 
     document.getElementById('bigRedButton2').addEventListener('click', () => {
-        redButtonSound.play();  // Reproduce el sonido del botón rojo
+        redButtonSound.play().catch((error) => console.error('Error al reproducir el sonido:', error));
         console.log("Botón rojo del Jugador 2 presionado, iniciando su turno.");
-        startPlayerTurn(2, 5); // Jugador 2 con 5 segundos
+        startPlayerTurn(2, 5, selectedLanguage); // Jugador 2 con 5 segundos
     });
 }
 
@@ -76,6 +183,8 @@ function showMessage(playerNumber, baseMessage, timeLimit) {
     const statusElement = document.getElementById(`dynamic-message-on-screen${playerNumber}`);
     let timeLeft = parseInt(timeLimit, 10);
 
+    console.log(`Mostrando mensaje para el Jugador ${playerNumber} en ${selectedLanguage}: "${baseMessage}" con un tiempo límite de ${timeLimit} segundos.`);
+
     if (isNaN(timeLeft)) {
         console.error("El valor de timeLimit no es un número válido:", timeLimit);
         timeLeft = 0; // Asignar un valor predeterminado si es NaN
@@ -88,7 +197,7 @@ function showMessage(playerNumber, baseMessage, timeLimit) {
     }
 
     // Mostrar mensaje inicial con el tiempo restante
-    statusElement.innerText = `${baseMessage} ${timeLeft} segundos restantes`;
+    statusElement.innerText = `${baseMessage} ${timeLeft} ${translate('seconds_remaining', selectedLanguage)}`;
 
     // Si el tiempo es 0 o menor, no iniciar el intervalo
     if (timeLeft <= 0) {
@@ -100,16 +209,18 @@ function showMessage(playerNumber, baseMessage, timeLimit) {
         timeLeft--;
 
         // Actualizar el mensaje con el tiempo restante
-        statusElement.innerText = `${baseMessage} ${timeLeft} segundos restantes`;
+        statusElement.innerText = `${baseMessage} ${timeLeft} ${translate('seconds_remaining', selectedLanguage)}`;
 
         // Si el tiempo se agota, detener el intervalo y limpiar el mensaje
         if (timeLeft <= 0) {
             clearInterval(statusElement.interval);
             statusElement.innerText = ''; // Limpia el mensaje después de que el tiempo se agote
             statusElement.interval = null;
+            console.log(`Tiempo agotado para el Jugador ${playerNumber}, mensaje limpiado.`);
         }
     }, 1000);
 }
+
 
 function handleAnswerClick(event) {
     let button = event.target;
@@ -128,31 +239,31 @@ function handleAnswerClick(event) {
         console.log(`Jugador ${playerNumber} respondió correctamente.`);
         playCorrectSound();
         updateScore(playerNumber, 10);
-        showMessage(playerNumber, '¡Respuesta correcta!', 3);  // Mostrar el mensaje durante 3 segundos
+        showMessage(playerNumber, translate('correct_answer', selectedLanguage), 3); 
 
         let otherPlayer = playerNumber === 1 ? 2 : 1;
-        showMessage(otherPlayer, 'El jugador contrario respondió bien, perdiste la ronda.', 3);
+        showMessage(otherPlayer, translate('opponent_correct', selectedLanguage), 3);
 
         setTimeout(() => {
-            proceedToNextRound();
-        }, 3000); // Espera 3 segundos antes de proceder a la siguiente ronda
+            proceedToNextRound(selectedLanguage);
+        }, 3000); 
     } else {
         console.log(`Jugador ${playerNumber} respondió incorrectamente.`);
         playIncorrectSound();
         button.style.backgroundColor = 'red';
         updateScore(playerNumber, -10);
-        showMessage(playerNumber, 'Respuesta incorrecta.', 3);
+        showMessage(playerNumber, translate('incorrect_answer', selectedLanguage), 3);
 
         playersWhoAnswered++;
 
         if (playersWhoAnswered < 2) {
             setTimeout(() => {
-                allowOtherPlayerToAnswer(playerNumber);
-            }, 3000); // Espera 3 segundos antes de permitir que el otro jugador responda
+                allowOtherPlayerToAnswer(playerNumber, selectedLanguage);
+            }, 3000); 
         } else {
             setTimeout(() => {
-                proceedToNextRound();
-            }, 3000); // Espera 3 segundos antes de proceder a la siguiente ronda
+                proceedToNextRound(selectedLanguage);
+            }, 3000); 
         }
     }
 }
@@ -180,21 +291,28 @@ function updateScore(playerNumber, points) {
     }
 }
 
-function endGame() {
+function endGame(selectedLanguage) {
     console.log("El juego ha terminado, determinando el ganador.");
 
     let winnerMessage = '';
+    const player1NameStored = localStorage.getItem('player1Name') || 'Player 1';
+    const player2NameStored = localStorage.getItem('player2Name') || 'Player 2';
+
     if (player1Score > player2Score) {
-        winnerMessage = '¡Jugador 1 es el ganador!';
+        winnerMessage = `${translate('winner_message', selectedLanguage)} ${player1NameStored}!`;
     } else if (player2Score > player1Score) {
-        winnerMessage = '¡Jugador 2 es el ganador!';
+        winnerMessage = `${translate('winner_message', selectedLanguage)} ${player2NameStored}!`;
     } else {
-        winnerMessage = '¡Es un empate!';
+        winnerMessage = translate('draw_message', selectedLanguage);
     }
 
     localStorage.setItem('player1Results', JSON.stringify(player1Answers));
     localStorage.setItem('player2Results', JSON.stringify(player2Answers));
+    localStorage.setItem('player1Score', player1Score);
+    localStorage.setItem('player2Score', player2Score);
     localStorage.setItem('winnerMessage', winnerMessage);
+
+    console.log(`Mensaje del ganador almacenado: ${winnerMessage}`);
 
     window.location.href = '/pages/results.html';
 }
@@ -220,13 +338,12 @@ function shuffleArray(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
-function startPlayerTurn(playerNumber, timeLimit) {
+function startPlayerTurn(playerNumber, timeLimit, selectedLanguage) {
     currentPlayer = playerNumber;
     let otherPlayer = playerNumber === 1 ? 2 : 1;
 
     console.log(`Iniciando turno para el Jugador ${playerNumber} con un límite de tiempo de ${timeLimit} segundos.`);
 
-    // Limpia cualquier temporizador activo antes de iniciar uno nuevo
     if (timers[playerNumber]) {
         clearTimeout(timers[playerNumber]);
     }
@@ -237,28 +354,31 @@ function startPlayerTurn(playerNumber, timeLimit) {
     stopTickTockSound();
 
     disableButton(`bigRedButton${otherPlayer}`);
-    showMessage(otherPlayer, 'Espera a que el otro jugador responda', timeLimit);
+    showMessage(otherPlayer, translate('wait_other_player', selectedLanguage), timeLimit);
 
     disableAnswerButtons(otherPlayer);
     disableButton(`bigRedButton${playerNumber}`);
 
     enableAnswerButtons(playerNumber);
-    showMessage(playerNumber, `Tienes ${timeLimit} segundos para responder`, timeLimit);
+    showMessage(playerNumber, translate('your_turn', selectedLanguage), timeLimit);
 
     timers[playerNumber] = setTimeout(() => {
         console.log(`Tiempo agotado para el Jugador ${playerNumber}.`);
-        handlePlayerTimeout(playerNumber, timeLimit);
+        handlePlayerTimeout(playerNumber, timeLimit, selectedLanguage);
     }, timeLimit * 1000);
 }
 
-function handlePlayerTimeout(playerNumber, timeLimit) {
+function handlePlayerTimeout(playerNumber, timeLimit, selectedLanguage) {
     console.log(`Tiempo agotado para el Jugador ${playerNumber}.`);
 
     let otherPlayer = playerNumber === 1 ? 2 : 1;
-    console.log(`El siguiente turno será para el Jugador ${otherPlayer}.`);
 
-    showMessage(playerNumber, '¡Se acabó tu tiempo!', 5);  // Usar un mensaje fijo
-    showMessage(otherPlayer, 'El otro jugador no respondió a tiempo, es tu turno.', 5);
+    // Deshabilitar botones de respuesta para el jugador que se quedó sin tiempo
+    disableAnswerButtons(playerNumber);
+
+    // Mostrar mensaje de tiempo agotado
+    showMessage(playerNumber, translate('time_up', selectedLanguage), 5);
+    showMessage(otherPlayer, translate('other_player_turn', selectedLanguage), 5);
 
     playersWhoAnswered++;
     console.log(`Número de jugadores que han respondido o agotado su tiempo: ${playersWhoAnswered}`);
@@ -266,27 +386,27 @@ function handlePlayerTimeout(playerNumber, timeLimit) {
     if (playersWhoAnswered < 2) {
         console.log(`Permitiendo al Jugador ${otherPlayer} responder después de 5 segundos.`);
         setTimeout(() => {
-            allowOtherPlayerToAnswer(playerNumber);
+            allowOtherPlayerToAnswer(playerNumber, selectedLanguage);
         }, 5000);
     } else {
         console.log("Ambos jugadores han respondido o agotado su tiempo. Procediendo a la siguiente ronda.");
         setTimeout(() => {
-            proceedToNextRound();
+            proceedToNextRound(selectedLanguage);
         }, 5000);
     }
 }
 
-function allowOtherPlayerToAnswer(playerNumber) {
+function allowOtherPlayerToAnswer(playerNumber, selectedLanguage) {
     let otherPlayer = playerNumber === 1 ? 2 : 1;
     console.log(`Permitiendo al Jugador ${otherPlayer} responder después de que el Jugador ${playerNumber} falló.`);
 
     enableButton(`bigRedButton${otherPlayer}`);
     enableAnswerButtons(otherPlayer);
 
-    startPlayerTurn(otherPlayer, 30); // El otro jugador tiene 30 segundos
+    startPlayerTurn(otherPlayer, 30, selectedLanguage); 
 }
 
-function proceedToNextRound() {
+function proceedToNextRound(selectedLanguage) {
     roundsLeft--;
     document.getElementById('rounds-left').innerText = roundsLeft;
     document.getElementById('rounds-left-mirror').innerText = roundsLeft;
@@ -294,22 +414,19 @@ function proceedToNextRound() {
 
     if (roundsLeft === 0) {
         console.log("No quedan más rondas, finalizando juego.");
-        endGame();
+        endGame(selectedLanguage);
     } else {
         currentQuestionIndex++;
-        playersWhoAnswered = 0; // Reiniciar el contador
+        playersWhoAnswered = 0; 
 
-        // Mostrar el mensaje de ronda finalizada
-        showMessage(1, 'Ronda finalizada, nueva pregunta en', 10);
-        showMessage(2, 'Ronda finalizada, nueva pregunta en', 10);
+        showMessage(1, translate('round_over', selectedLanguage), 10);
+        showMessage(2, translate('round_over', selectedLanguage), 10);
 
-        // Esperar 10 segundos antes de comenzar la nueva ronda
         setTimeout(() => {
-            setQuestion(); // Configurar la nueva pregunta
+            setQuestion(selectedLanguage); 
             enableButton('bigRedButton1');
             enableButton('bigRedButton2');
 
-            // Limpiar cualquier temporizador anterior o mensaje dinámico
             if (document.getElementById('dynamic-message-on-screen1').interval) {
                 clearInterval(document.getElementById('dynamic-message-on-screen1').interval);
             }
@@ -317,16 +434,15 @@ function proceedToNextRound() {
                 clearInterval(document.getElementById('dynamic-message-on-screen2').interval);
             }
 
-            // Mostrar el mensaje "Aprieta el botón rojo si sabes la respuesta"
-            document.getElementById('dynamic-message-on-screen1').innerText = 'Aprieta el botón rojo si sabes la respuesta';
-            document.getElementById('dynamic-message-on-screen2').innerText = 'Aprieta el botón rojo si sabes la respuesta';
+            document.getElementById('dynamic-message-on-screen1').innerText = translate('press_red_button', selectedLanguage);
+            document.getElementById('dynamic-message-on-screen2').innerText = translate('press_red_button', selectedLanguage);
 
             console.log("Nueva ronda configurada. Mensaje de botón rojo mostrado.");
-        }, 10000); // Espera exactamente 10 segundos
+        }, 10000); 
     }
 }
 
-function setQuestion() {
+function setQuestion(selectedLanguage) {
     console.log("Configurando nueva pregunta.");
     let currentQuestion = questions[currentQuestionIndex];
     let shuffledAnswers = shuffleArray(currentQuestion.answers);
@@ -340,13 +456,13 @@ function setQuestion() {
 
         button1.className = 'answerButtons';
         button2.className = 'answerButtons';
-        button1.style.backgroundColor = ''; // Eliminar cualquier estilo de color de fondo aplicado
+        button1.style.backgroundColor = ''; 
         button2.style.backgroundColor = '';
-        button1.disabled = true; // Comienzan deshabilitados
-        button2.disabled = true; // Comienzan deshabilitados
+        button1.disabled = true; 
+        button2.disabled = true; 
 
-        button1.innerText = answer.text;
-        button2.innerText = answer.text;
+        button1.innerText = answer.text; 
+        button2.innerText = answer.text; 
 
         if (answer.correct) {
             button1.classList.add('correctAnswer');
@@ -361,19 +477,15 @@ function setQuestion() {
     console.log("Pregunta y respuestas configuradas.");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function displaySelectedLanguage(show, selectedLanguage) {
+    const languageDisplayElement = document.getElementById('language-display');
+    if (show) {
+        languageDisplayElement.innerText = translate('language_display', selectedLanguage) + selectedLanguage;
+        languageDisplayElement.style.display = 'block';
+    } else {
+        languageDisplayElement.style.display = 'none';
+    }
+}
 
 
 
