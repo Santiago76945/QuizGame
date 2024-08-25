@@ -48,6 +48,10 @@ function isIndexPage() {
     return isIndex;
 }
 
+// Añadir event listeners a los botones de idioma
+document.getElementById('language-es').addEventListener('click', () => setLanguage('es'));
+document.getElementById('language-en').addEventListener('click', () => setLanguage('en'));
+
 // Llamar a updateTexts solo si estamos en index.html
 if (isIndexPage()) {
     updateTexts();
