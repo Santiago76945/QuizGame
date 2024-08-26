@@ -628,8 +628,649 @@
             { "text": "Belgium", "correct": false },
             { "text": "Switzerland", "correct": false }
         ]
+    },
+    {
+        "question": "If Sarah buys 3 packs of pencils, each containing 12 pencils, and gives away 15 pencils to her classmates, how many pencils does she have left?",
+        "answers": [
+            { "text": "21", "correct": true },
+            { "text": "36", "correct": false },
+            { "text": "27", "correct": false },
+            { "text": "18", "correct": false }
+        ]
+    },
+    {
+        "question": "Tom has 8 apples. He gives 2 apples to each of his 3 friends. How many apples does Tom have left?",
+        "answers": [
+            { "text": "2", "correct": true },
+            { "text": "4", "correct": false },
+            { "text": "6", "correct": false },
+            { "text": "1", "correct": false }
+        ]
+    },
+    {
+        "question": "Emily needs to bake 4 cakes. Each cake requires 3 eggs. She has a dozen eggs at home. How many eggs will she have left after baking the cakes?",
+        "answers": [
+            { "text": "0", "correct": true },
+            { "text": "4", "correct": false },
+            { "text": "2", "correct": false },
+            { "text": "6", "correct": false }
+        ]
+    },
+    {
+        "question": "John has an appointment at 6:00 PM. He needs 15 minutes to shower, 30 minutes to get dressed, and 20 minutes to reach his destination. What time should he start getting ready?",
+        "answers": [
+            { "text": "5:00 PM", "correct": true },
+            { "text": "5:15 PM", "correct": false },
+            { "text": "5:10 PM", "correct": false },
+            { "text": "4:55 PM", "correct": false }
+        ]
+    },
+    {
+        "question": "If a train travels at 80 km/h and takes 3 hours to reach its destination, how far is the destination from the starting point?",
+        "answers": [
+            { "text": "240 km", "correct": true },
+            { "text": "200 km", "correct": false },
+            { "text": "260 km", "correct": false },
+            { "text": "220 km", "correct": false }
+        ]
+    },
+    {
+        "question": "A farmer has 120 trees in his orchard. He plants 5 more trees each week for 4 weeks. How many trees will he have at the end of the 4 weeks?",
+        "answers": [
+            { "text": "140", "correct": true },
+            { "text": "130", "correct": false },
+            { "text": "150", "correct": false },
+            { "text": "135", "correct": false }
+        ]
+    },
+    {
+        "question": "Laura has a collection of 48 stamps. If she decides to organize them into 6 albums with the same number of stamps in each, how many stamps will be in each album?",
+        "answers": [
+            { "text": "8", "correct": true },
+            { "text": "6", "correct": false },
+            { "text": "7", "correct": false },
+            { "text": "9", "correct": false }
+        ]
+    },
+    {
+        "question": "If a store sells t-shirts at $15 each and John buys 4 t-shirts, how much does he pay in total?",
+        "answers": [
+            { "text": "$60", "correct": true },
+            { "text": "$45", "correct": false },
+            { "text": "$50", "correct": false },
+            { "text": "$70", "correct": false }
+        ]
+    },
+    {
+        "question": "Peter has 3 times the amount of money that Anna has. If Anna has $50, how much money does Peter have?",
+        "answers": [
+            { "text": "$150", "correct": true },
+            { "text": "$100", "correct": false },
+            { "text": "$200", "correct": false },
+            { "text": "$75", "correct": false }
+        ]
+    },
+    {
+        "question": "If a car consumes 8 liters of gasoline for every 100 kilometers, how many liters of gasoline will it need to travel 250 kilometers?",
+        "answers": [
+            { "text": "20 liters", "correct": true },
+            { "text": "18 liters", "correct": false },
+            { "text": "25 liters", "correct": false },
+            { "text": "22 liters", "correct": false }
+        ]
+    },
+    {
+        "question": "Marta needs to buy 7 pencils. If each pencil costs $1.50, how much will she spend in total?",
+        "answers": [
+            { "text": "$10.50", "correct": true },
+            { "text": "$9.00", "correct": false },
+            { "text": "$7.50", "correct": false },
+            { "text": "$12.00", "correct": false }
+        ]
+    },
+    {
+        "question": "A swimming pool is filled with water at a rate of 15 liters per minute. How many liters of water will be added after 10 minutes?",
+        "answers": [
+            { "text": "150 liters", "correct": true },
+            { "text": "100 liters", "correct": false },
+            { "text": "120 liters", "correct": false },
+            { "text": "140 liters", "correct": false }
+        ]
+    },
+    {
+        "question": "In a group of 40 students, 60% are girls. How many boys are in the group?",
+        "answers": [
+            { "text": "16", "correct": true },
+            { "text": "24", "correct": false },
+            { "text": "20", "correct": false },
+            { "text": "18", "correct": false }
+        ]
+    },
+    {
+        "question": "If a worker earns $20 per hour and works 7 hours a day, how much will he earn in 5 days?",
+        "answers": [
+            { "text": "$700", "correct": true },
+            { "text": "$600", "correct": false },
+            { "text": "$750", "correct": false },
+            { "text": "$800", "correct": false }
+        ]
+    },
+    {
+        "question": "If a book has 240 pages and Maria reads 20 pages per day, how many days will it take her to finish the book?",
+        "answers": [
+            { "text": "12 days", "correct": true },
+            { "text": "10 days", "correct": false },
+            { "text": "15 days", "correct": false },
+            { "text": "14 days", "correct": false }
+        ]
+    },
+    {
+        "question": "Carlos has 3 times more marbles than Luis. If Luis has 15 marbles, how many marbles does Carlos have?",
+        "answers": [
+            { "text": "45", "correct": true },
+            { "text": "30", "correct": false },
+            { "text": "60", "correct": false },
+            { "text": "40", "correct": false }
+        ]
+    },
+    {
+        "question": "If the price of a computer is $500 and there is a 10% discount, how much will the customer pay?",
+        "answers": [
+            { "text": "$450", "correct": true },
+            { "text": "$400", "correct": false },
+            { "text": "$475", "correct": false },
+            { "text": "$425", "correct": false }
+        ]
+    },
+    {
+        "question": "A train covers 150 km in 2 hours. What is the average speed of the train in km/h?",
+        "answers": [
+            { "text": "75 km/h", "correct": true },
+            { "text": "70 km/h", "correct": false },
+            { "text": "80 km/h", "correct": false },
+            { "text": "90 km/h", "correct": false }
+        ]
+    },
+    {
+        "question": "If you have a 36-meter rope and cut it into 9 equal parts, how many meters does each part measure?",
+        "answers": [
+            { "text": "4 meters", "correct": true },
+            { "text": "3 meters", "correct": false },
+            { "text": "6 meters", "correct": false },
+            { "text": "5 meters", "correct": false }
+        ]
+    },
+    {
+        "question": "A car travels 240 km in 3 hours. What is the average speed of the car?",
+        "answers": [
+            { "text": "80 km/h", "correct": true },
+            { "text": "90 km/h", "correct": false },
+            { "text": "70 km/h", "correct": false },
+            { "text": "100 km/h", "correct": false }
+        ]
+    },
+    {
+        "question": "If a truck carries 24 tons of cargo and needs to make 6 trips to deliver all the cargo, how many tons does it carry in each trip?",
+        "answers": [
+            { "text": "4 tons", "correct": true },
+            { "text": "6 tons", "correct": false },
+            { "text": "3 tons", "correct": false },
+            { "text": "5 tons", "correct": false }
+        ]
+    },
+    {
+        "question": "A supermarket offers a 15% discount on a product that costs $200. How much will you pay after the discount?",
+        "answers": [
+            { "text": "$170", "correct": true },
+            { "text": "$180", "correct": false },
+            { "text": "$160", "correct": false },
+            { "text": "$150", "correct": false }
+        ]
+    },
+    {
+        "question": "If a train travels at 90 km/h and takes 5 hours to reach its destination, how far is the destination from the starting point?",
+        "answers": [
+            { "text": "450 km", "correct": true },
+            { "text": "500 km", "correct": false },
+            { "text": "400 km", "correct": false },
+            { "text": "480 km", "correct": false }
+        ]
+    },
+    {
+        "question": "If John has $200 and spends 25% on a book, how much money does he have left?",
+        "answers": [
+            { "text": "$150", "correct": true },
+            { "text": "$100", "correct": false },
+            { "text": "$50", "correct": false },
+            { "text": "$75", "correct": false }
+        ]
+    },
+    {
+        "question": "A bicycle costs $350. If you buy it with a 20% discount, how much do you pay?",
+        "answers": [
+            { "text": "$280", "correct": true },
+            { "text": "$300", "correct": false },
+            { "text": "$270", "correct": false },
+            { "text": "$290", "correct": false }
+        ]
+    },
+    {
+        "question": "I am lighter than a feather, but no one can hold me for very long. What am I?",
+        "answers": [
+            { "text": "Breath", "correct": true },
+            { "text": "Smoke", "correct": false },
+            { "text": "Air", "correct": false },
+            { "text": "Light", "correct": false }
+        ]
+    },
+    {
+        "question": "The more you take away from me, the bigger I become. What am I?",
+        "answers": [
+            { "text": "A hole", "correct": true },
+            { "text": "Darkness", "correct": false },
+            { "text": "Time", "correct": false },
+            { "text": "Distance", "correct": false }
+        ]
+    },
+    {
+        "question": "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?",
+        "answers": [
+            { "text": "A map", "correct": true },
+            { "text": "A dream", "correct": false },
+            { "text": "A book", "correct": false },
+            { "text": "A painting", "correct": false }
+        ]
+    },
+    {
+        "question": "You can break me without touching or seeing me. What am I?",
+        "answers": [
+            { "text": "A promise", "correct": true },
+            { "text": "Silence", "correct": false },
+            { "text": "Trust", "correct": false },
+            { "text": "A heart", "correct": false }
+        ]
+    },
+    {
+        "question": "I have one eye but can’t see. What am I?",
+        "answers": [
+            { "text": "A needle", "correct": true },
+            { "text": "A hurricane", "correct": false },
+            { "text": "A lock", "correct": false },
+            { "text": "A hole", "correct": false }
+        ]
+    },
+    {
+        "question": "You see me in winter, but not in summer. I am cold and fluffy. What am I?",
+        "answers": [
+            { "text": "Snowflakes", "correct": true },
+            { "text": "Clouds", "correct": false },
+            { "text": "Mountains", "correct": false },
+            { "text": "Coats", "correct": false }
+        ]
+    },
+    {
+        "question": "We walk without feet, we fly without wings. What are we?",
+        "answers": [
+            { "text": "Clouds", "correct": true },
+            { "text": "Time", "correct": false },
+            { "text": "Dreams", "correct": false },
+            { "text": "The wind", "correct": false }
+        ]
+    },
+    {
+        "question": "The more you have of me, the less you can see. What am I?",
+        "answers": [
+            { "text": "Darkness", "correct": true },
+            { "text": "Fog", "correct": false },
+            { "text": "Dust", "correct": false },
+            { "text": "A shadow", "correct": false }
+        ]
+    },
+    {
+        "question": "I carry my house on my back. Who am I?",
+        "answers": [
+            { "text": "A snail", "correct": true },
+            { "text": "A turtle", "correct": false },
+            { "text": "A hermit crab", "correct": false },
+            { "text": "A slug", "correct": false }
+        ]
+    },
+    {
+        "question": "I am always in front of you, but you can never see me. What am I?",
+        "answers": [
+            { "text": "The future", "correct": true },
+            { "text": "The air", "correct": false },
+            { "text": "The horizon", "correct": false },
+            { "text": "A shadow", "correct": false }
+        ]
+    },
+    {
+        "question": "I belong to you, but others use me more than you do. What is it?",
+        "answers": [
+            { "text": "Your name", "correct": true },
+            { "text": "Your time", "correct": false },
+            { "text": "Your voice", "correct": false },
+            { "text": "Your shadow", "correct": false }
+        ]
+    },
+    {
+        "question": "I dive into water, but I do not get wet. What am I?",
+        "answers": [
+            { "text": "A shadow", "correct": true },
+            { "text": "A reflection", "correct": false },
+            { "text": "Air", "correct": false },
+            { "text": "Time", "correct": false }
+        ]
+    },
+    {
+        "question": "I undress as I get older. What am I?",
+        "answers": [
+            { "text": "An onion", "correct": true },
+            { "text": "A tree", "correct": false },
+            { "text": "The sun", "correct": false },
+            { "text": "A banana", "correct": false }
+        ]
+    },
+    {
+        "question": "If you say my name, I no longer exist. What am I?",
+        "answers": [
+            { "text": "Silence", "correct": true },
+            { "text": "A shadow", "correct": false },
+            { "text": "Darkness", "correct": false },
+            { "text": "An echo", "correct": false }
+        ]
+    },
+    {
+        "question": "The drier I get, the wetter I become. What am I?",
+        "answers": [
+            { "text": "A towel", "correct": true },
+            { "text": "A sponge", "correct": false },
+            { "text": "Water", "correct": false },
+            { "text": "The sea", "correct": false }
+        ]
+    },
+    {
+        "question": "You place your hand on my head, and in seconds I change your appearance. What am I?",
+        "answers": [
+            { "text": "A mirror", "correct": true },
+            { "text": "A hat", "correct": false },
+            { "text": "A comb", "correct": false },
+            { "text": "A wig", "correct": false }
+        ]
+    },
+    {
+        "question": "I fly without wings, I have a tail, and I cross the sky with great speed. What am I?",
+        "answers": [
+            { "text": "A comet", "correct": true },
+            { "text": "A plane", "correct": false },
+            { "text": "A shooting star", "correct": false },
+            { "text": "The wind", "correct": false }
+        ]
+    },
+    {
+        "question": "A man goes out in the rain at night without an umbrella or hat. His clothes get wet, but not a single hair on his head. How is this possible?",
+        "answers": [
+            { "text": "He's bald", "correct": true },
+            { "text": "He's wearing a coat", "correct": false },
+            { "text": "He runs very fast", "correct": false },
+            { "text": "He's in a car", "correct": false }
+        ]
+    },
+    {
+        "question": "I have four legs but cannot walk. What am I?",
+        "answers": [
+            { "text": "A table", "correct": true },
+            { "text": "A chair", "correct": false },
+            { "text": "An old dog", "correct": false },
+            { "text": "A bed", "correct": false }
+        ]
+    },
+    {
+        "question": "I have roots that nobody sees, I am taller than the trees, I go up, up, up, but I never grow. What am I?",
+        "answers": [
+            { "text": "A mountain", "correct": true },
+            { "text": "A skyscraper", "correct": false },
+            { "text": "Smoke", "correct": false },
+            { "text": "A hill", "correct": false }
+        ]
+    },
+    {
+        "question": "I can be long or short; I like to slide around your neck, but I am not a snake. What am I?",
+        "answers": [
+            { "text": "A tie", "correct": true },
+            { "text": "A scarf", "correct": false },
+            { "text": "A chain", "correct": false },
+            { "text": "A collar", "correct": false }
+        ]
+    },
+    {
+        "question": "I have no life, but I can die. What am I?",
+        "answers": [
+            { "text": "A light", "correct": true },
+            { "text": "A battery", "correct": false },
+            { "text": "Fire", "correct": false },
+            { "text": "A plant", "correct": false }
+        ]
+    },
+    {
+        "question": "It’s yours, but everyone else uses it more than you do. What is it?",
+        "answers": [
+            { "text": "Your name", "correct": true },
+            { "text": "Your time", "correct": false },
+            { "text": "Your house", "correct": false },
+            { "text": "Your shadow", "correct": false }
+        ]
+    },
+    {
+        "question": "You can hold me without touching or seeing me. What am I?",
+        "answers": [
+            { "text": "A secret", "correct": true },
+            { "text": "Time", "correct": false },
+            { "text": "Air", "correct": false },
+            { "text": "A shadow", "correct": false }
+        ]
+    },
+    {
+        "question": "If I tell you I always tell the truth, am I lying or telling the truth?",
+        "answers": [
+            { "text": "A paradox", "correct": true },
+            { "text": "A lie", "correct": false },
+            { "text": "The truth", "correct": false },
+            { "text": "A doubt", "correct": false }
+        ]
+    },
+    {
+        "question": "You can throw me out of the car, but I stay with you. What am I?",
+        "answers": [
+            { "text": "A shadow", "correct": true },
+            { "text": "Smoke", "correct": false },
+            { "text": "Dust", "correct": false },
+            { "text": "An echo", "correct": false }
+        ]
+    },
+    {
+        "question": "I always move forward, never back. What am I?",
+        "answers": [
+            { "text": "Time", "correct": true },
+            { "text": "A river", "correct": false },
+            { "text": "A clock", "correct": false },
+            { "text": "The wind", "correct": false }
+        ]
+    },
+    {
+        "question": "I have teeth but do not bite. What am I?",
+        "answers": [
+            { "text": "A comb", "correct": true },
+            { "text": "A saw", "correct": false },
+            { "text": "A gear", "correct": false },
+            { "text": "A key", "correct": false }
+        ]
+    },
+    {
+        "question": "You can break me without touching me. What am I?",
+        "answers": [
+            { "text": "A promise", "correct": true },
+            { "text": "A heart", "correct": false },
+            { "text": "Silence", "correct": false },
+            { "text": "Glass", "correct": false }
+        ]
+    },
+    {
+        "question": "I can be filled with words, but you can’t write in me. What am I?",
+        "answers": [
+            { "text": "A mind", "correct": true },
+            { "text": "A dictionary", "correct": false },
+            { "text": "A book", "correct": false },
+            { "text": "A chalkboard", "correct": false }
+        ]
+    },
+    {
+        "question": "I am heavy forward, but not backward. What am I?",
+        "answers": [
+            { "text": "A barrel", "correct": true },
+            { "text": "A truck", "correct": false },
+            { "text": "A cart", "correct": false },
+            { "text": "A wheelbarrow", "correct": false }
+        ]
+    },
+    {
+        "question": "If one plus one isn’t two, what is it?",
+        "answers": [
+            { "text": "Eleven", "correct": true },
+            { "text": "Three", "correct": false },
+            { "text": "Zero", "correct": false },
+            { "text": "Five", "correct": false }
+        ]
+    },
+    {
+        "question": "I am not animal, vegetable, or mineral. What am I?",
+        "answers": [
+            { "text": "A thought", "correct": true },
+            { "text": "Air", "correct": false },
+            { "text": "Time", "correct": false },
+            { "text": "A soul", "correct": false }
+        ]
+    },
+    {
+        "question": "I live on Earth, but if water touches me, I die. What am I?",
+        "answers": [
+            { "text": "Fire", "correct": true },
+            { "text": "Salt", "correct": false },
+            { "text": "Paper", "correct": false },
+            { "text": "Ice", "correct": false }
+        ]
+    },
+    {
+        "question": "If you fall off a cliff, what do you do?",
+        "answers": [
+            { "text": "Try again", "correct": true },
+            { "text": "Scream", "correct": false },
+            { "text": "Die", "correct": false },
+            { "text": "Nothing", "correct": false }
+        ]
+    },
+    {
+        "question": "You can find me in every corner, and in any room, but you will never see me touch the ground. What am I?",
+        "answers": [
+            { "text": "A right angle", "correct": true },
+            { "text": "A wall", "correct": false },
+            { "text": "A shadow", "correct": false },
+            { "text": "The ceiling", "correct": false }
+        ]
+    },
+    {
+        "question": "I am something, and I am nothing. You can see me, but you can’t touch me. What am I?",
+        "answers": [
+            { "text": "A reflection", "correct": true },
+            { "text": "Wind", "correct": false },
+            { "text": "Smoke", "correct": false },
+            { "text": "A shadow", "correct": false }
+        ]
+    },
+    {
+        "question": "The one who makes me doesn’t need me. The one who buys me doesn’t want me. The one who uses me doesn’t know. What am I?",
+        "answers": [
+            { "text": "A coffin", "correct": true },
+            { "text": "A gift", "correct": false },
+            { "text": "Poison", "correct": false },
+            { "text": "A surprise", "correct": false }
+        ]
+    },
+    {
+        "question": "I am more valuable than gold, but you cannot see me. What am I?",
+        "answers": [
+            { "text": "Time", "correct": true },
+            { "text": "Health", "correct": false },
+            { "text": "Wisdom", "correct": false },
+            { "text": "Love", "correct": false }
+        ]
+    },
+    {
+        "question": "You light me to see me, but when you see me, I go out. What am I?",
+        "answers": [
+            { "text": "A candle", "correct": true },
+            { "text": "A light bulb", "correct": false },
+            { "text": "The sun", "correct": false },
+            { "text": "A match", "correct": false }
+        ]
+    },
+    {
+        "question": "You can break me without touching me, catch me without running, and kill me without blood. What am I?",
+        "answers": [
+            { "text": "A promise", "correct": true },
+            { "text": "Silence", "correct": false },
+            { "text": "A heart", "correct": false },
+            { "text": "A dream", "correct": false }
+        ]
+    },
+    {
+        "question": "No one has ever seen me, and no one ever will. Yet, I am where everything you see resides. What am I?",
+        "answers": [
+            { "text": "The future", "correct": true },
+            { "text": "Air", "correct": false },
+            { "text": "A shadow", "correct": false },
+            { "text": "Time", "correct": false }
+        ]
+    },
+    {
+        "question": "I am something, I am nothing, I am everything at once. What am I?",
+        "answers": [
+            { "text": "Time", "correct": true },
+            { "text": "Wind", "correct": false },
+            { "text": "The mind", "correct": false },
+            { "text": "Space", "correct": false }
+        ]
+    },
+    {
+        "question": "You can’t see me, but you always feel me. I can break things, but you can’t catch me. What am I?",
+        "answers": [
+            { "text": "The wind", "correct": true },
+            { "text": "A shadow", "correct": false },
+            { "text": "Time", "correct": false },
+            { "text": "Love", "correct": false }
+        ]
+    },
+    {
+        "question": "I look like an hourglass, but I don’t measure time. What am I?",
+        "answers": [
+            { "text": "The human body", "correct": true },
+            { "text": "A clock", "correct": false },
+            { "text": "An illusion", "correct": false },
+            { "text": "A shadow", "correct": false }
+        ]
+    },
+    {
+        "question": "You throw me when you need me, and you pick me up when you don’t. What am I?",
+        "answers": [
+            { "text": "An anchor", "correct": true },
+            { "text": "A net", "correct": false },
+            { "text": "A rope", "correct": false },
+            { "text": "A lasso", "correct": false }
+        ]
     }
 ]
+
+
 
 
 

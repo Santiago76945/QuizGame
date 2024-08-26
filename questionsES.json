@@ -630,6 +630,647 @@
             { "text": "Bélgica", "correct": false },
             { "text": "Suiza", "correct": false }
         ]
+    },
+    {
+        "question": "Si Sara compra 3 paquetes de lápices, cada uno con 12 lápices, y regala 15 lápices a sus compañeros, ¿cuántos lápices le quedan?",
+        "answers": [
+            { "text": "21", "correct": true },
+            { "text": "36", "correct": false },
+            { "text": "27", "correct": false },
+            { "text": "18", "correct": false }
+        ]
+    },
+    {
+        "question": "Tomás tiene 8 manzanas. Le da 2 manzanas a cada uno de sus 3 amigos. ¿Cuántas manzanas le quedan a Tomás?",
+        "answers": [
+            { "text": "2", "correct": true },
+            { "text": "4", "correct": false },
+            { "text": "6", "correct": false },
+            { "text": "1", "correct": false }
+        ]
+    },
+    {
+        "question": "Emily necesita hornear 4 pasteles. Cada pastel requiere 3 huevos. Ella tiene una docena de huevos en casa. ¿Cuántos huevos le sobrarán después de hornear los pasteles?",
+        "answers": [
+            { "text": "0", "correct": true },
+            { "text": "4", "correct": false },
+            { "text": "2", "correct": false },
+            { "text": "6", "correct": false }
+        ]
+    },
+    {
+        "question": "Juan tiene un compromiso a las 18:00 horas. Necesita 15 minutos para ducharse, 30 minutos para vestirse y 20 minutos para llegar. ¿A qué hora debe empezar a prepararse?",
+        "answers": [
+            { "text": "17:00", "correct": true },
+            { "text": "17:15", "correct": false },
+            { "text": "17:10", "correct": false },
+            { "text": "16:55", "correct": false }
+        ]
+    },
+    {
+        "question": "Si un tren viaja a 80 km/h y tarda 3 horas en llegar a su destino, ¿a cuántos kilómetros está el destino del tren?",
+        "answers": [
+            { "text": "240 km", "correct": true },
+            { "text": "200 km", "correct": false },
+            { "text": "260 km", "correct": false },
+            { "text": "220 km", "correct": false }
+        ]
+    },
+    {
+        "question": "Un agricultor tiene 120 árboles en su huerto. Planta 5 árboles más cada semana durante 4 semanas. ¿Cuántos árboles tendrá al final de las 4 semanas?",
+        "answers": [
+            { "text": "140", "correct": true },
+            { "text": "130", "correct": false },
+            { "text": "150", "correct": false },
+            { "text": "135", "correct": false }
+        ]
+    },
+    {
+        "question": "Laura tiene una colección de 48 sellos. Si decide organizarla en 6 álbumes con el mismo número de sellos en cada uno, ¿cuántos sellos habrá en cada álbum?",
+        "answers": [
+            { "text": "8", "correct": true },
+            { "text": "6", "correct": false },
+            { "text": "7", "correct": false },
+            { "text": "9", "correct": false }
+        ]
+    },
+    {
+        "question": "Si una tienda vende camisetas a $15 cada una y Juan compra 4 camisetas, ¿cuánto paga en total?",
+        "answers": [
+            { "text": "$60", "correct": true },
+            { "text": "$45", "correct": false },
+            { "text": "$50", "correct": false },
+            { "text": "$70", "correct": false }
+        ]
+    },
+    {
+        "question": "Pedro tiene 3 veces la cantidad de dinero que tiene Ana. Si Ana tiene $50, ¿cuánto dinero tiene Pedro?",
+        "answers": [
+            { "text": "$150", "correct": true },
+            { "text": "$100", "correct": false },
+            { "text": "$200", "correct": false },
+            { "text": "$75", "correct": false }
+        ]
+    },
+    {
+        "question": "Si un automóvil consume 8 litros de gasolina por cada 100 kilómetros, ¿cuántos litros de gasolina necesitará para recorrer 250 kilómetros?",
+        "answers": [
+            { "text": "20 litros", "correct": true },
+            { "text": "18 litros", "correct": false },
+            { "text": "25 litros", "correct": false },
+            { "text": "22 litros", "correct": false }
+        ]
+    },
+    {
+        "question": "Marta necesita comprar 7 lápices. Si cada lápiz cuesta $1.50, ¿cuánto gastará en total?",
+        "answers": [
+            { "text": "$10.50", "correct": true },
+            { "text": "$9.00", "correct": false },
+            { "text": "$7.50", "correct": false },
+            { "text": "$12.00", "correct": false }
+        ]
+    },
+    {
+        "question": "Una piscina se llena con agua a una tasa de 15 litros por minuto. ¿Cuántos litros de agua se habrán agregado después de 10 minutos?",
+        "answers": [
+            { "text": "150 litros", "correct": true },
+            { "text": "100 litros", "correct": false },
+            { "text": "120 litros", "correct": false },
+            { "text": "140 litros", "correct": false }
+        ]
+    },
+    {
+        "question": "En un grupo de 40 estudiantes, 60% son niñas. ¿Cuántos niños hay en el grupo?",
+        "answers": [
+            { "text": "16", "correct": true },
+            { "text": "24", "correct": false },
+            { "text": "20", "correct": false },
+            { "text": "18", "correct": false }
+        ]
+    },
+    {
+        "question": "Si un trabajador gana $20 por hora y trabaja 7 horas al día, ¿cuánto ganará en 5 días?",
+        "answers": [
+            { "text": "$700", "correct": true },
+            { "text": "$600", "correct": false },
+            { "text": "$750", "correct": false },
+            { "text": "$800", "correct": false }
+        ]
+    },
+    {
+        "question": "Si un libro tiene 240 páginas y María lee 20 páginas por día, ¿en cuántos días terminará el libro?",
+        "answers": [
+            { "text": "12 días", "correct": true },
+            { "text": "10 días", "correct": false },
+            { "text": "15 días", "correct": false },
+            { "text": "14 días", "correct": false }
+        ]
+    },
+    {
+        "question": "Carlos tiene 3 veces más canicas que Luis. Si Luis tiene 15 canicas, ¿cuántas canicas tiene Carlos?",
+        "answers": [
+            { "text": "45", "correct": true },
+            { "text": "30", "correct": false },
+            { "text": "60", "correct": false },
+            { "text": "40", "correct": false }
+        ]
+    },
+    {
+        "question": "Si el precio de una computadora es de $500 y hay un descuento del 10%, ¿cuánto pagará el cliente?",
+        "answers": [
+            { "text": "$450", "correct": true },
+            { "text": "$400", "correct": false },
+            { "text": "$475", "correct": false },
+            { "text": "$425", "correct": false }
+        ]
+    },
+    {
+        "question": "Un tren recorre 150 km en 2 horas. ¿Cuál es la velocidad media del tren en km/h?",
+        "answers": [
+            { "text": "75 km/h", "correct": true },
+            { "text": "70 km/h", "correct": false },
+            { "text": "80 km/h", "correct": false },
+            { "text": "90 km/h", "correct": false }
+        ]
+    },
+    {
+        "question": "Si tienes una cuerda de 36 metros y la cortas en 9 partes iguales, ¿cuántos metros mide cada parte?",
+        "answers": [
+            { "text": "4 metros", "correct": true },
+            { "text": "3 metros", "correct": false },
+            { "text": "6 metros", "correct": false },
+            { "text": "5 metros", "correct": false }
+        ]
+    },
+    {
+        "question": "Un coche viaja 240 km en 3 horas. ¿A qué velocidad promedio viaja el coche?",
+        "answers": [
+            { "text": "80 km/h", "correct": true },
+            { "text": "90 km/h", "correct": false },
+            { "text": "70 km/h", "correct": false },
+            { "text": "100 km/h", "correct": false }
+        ]
+    },
+    {
+        "question": "Si un camión transporta 24 toneladas de carga y necesita hacer 6 viajes para entregar toda la carga, ¿cuántas toneladas transporta en cada viaje?",
+        "answers": [
+            { "text": "4 toneladas", "correct": true },
+            { "text": "6 toneladas", "correct": false },
+            { "text": "3 toneladas", "correct": false },
+            { "text": "5 toneladas", "correct": false }
+        ]
+    },
+    {
+        "question": "Un supermercado ofrece un descuento del 15% en un producto que cuesta $200. ¿Cuánto pagarás después del descuento?",
+        "answers": [
+            { "text": "$170", "correct": true },
+            { "text": "$180", "correct": false },
+            { "text": "$160", "correct": false },
+            { "text": "$150", "correct": false }
+        ]
+    },
+    {
+        "question": "Si un tren viaja a 90 km/h y tarda 5 horas en llegar a su destino, ¿a cuántos kilómetros está el destino del tren?",
+        "answers": [
+            { "text": "450 km", "correct": true },
+            { "text": "500 km", "correct": false },
+            { "text": "400 km", "correct": false },
+            { "text": "480 km", "correct": false }
+        ]
+    },
+    {
+        "question": "Si Juan tiene $200 y gasta el 25% en un libro, ¿cuánto dinero le queda?",
+        "answers": [
+            { "text": "$150", "correct": false },
+            { "text": "$100", "correct": false },
+            { "text": "$50", "correct": false },
+            { "text": "$150", "correct": true }
+        ]
+    },
+    {
+        "question": "Una bicicleta cuesta $350. Si la compras con un descuento del 20%, ¿cuánto pagas?",
+        "answers": [
+            { "text": "$280", "correct": true },
+            { "text": "$300", "correct": false },
+            { "text": "$270", "correct": false },
+            { "text": "$290", "correct": false }
+        ]
+    },
+    {
+        "question": "Soy más ligero que una pluma, pero nadie puede sostenerme por mucho tiempo. ¿Qué soy?",
+        "answers": [
+            { "text": "El aliento", "correct": true },
+            { "text": "El humo", "correct": false },
+            { "text": "El aire", "correct": false },
+            { "text": "La luz", "correct": false }
+        ]
+    },
+    {
+        "question": "Cuanto más me quitas, más grande me hago. ¿Qué soy?",
+        "answers": [
+            { "text": "Un agujero", "correct": true },
+            { "text": "La oscuridad", "correct": false },
+            { "text": "El tiempo", "correct": false },
+            { "text": "La distancia", "correct": false }
+        ]
+    },
+    {
+        "question": "Tengo ciudades, pero no casas. Tengo montañas, pero no árboles. Tengo agua, pero no peces. ¿Qué soy?",
+        "answers": [
+            { "text": "Un mapa", "correct": true },
+            { "text": "Un sueño", "correct": false },
+            { "text": "Un libro", "correct": false },
+            { "text": "Una pintura", "correct": false }
+        ]
+    },
+    {
+        "question": "Me puedes romper sin tocarme o verme. ¿Qué soy?",
+        "answers": [
+            { "text": "Una promesa", "correct": true },
+            { "text": "El silencio", "correct": false },
+            { "text": "La confianza", "correct": false },
+            { "text": "El corazón", "correct": false }
+        ]
+    },
+    {
+        "question": "Tiene un ojo, pero no puede ver. ¿Qué es?",
+        "answers": [
+            { "text": "Una aguja", "correct": true },
+            { "text": "El huracán", "correct": false },
+            { "text": "La cerradura", "correct": false },
+            { "text": "El agujero", "correct": false }
+        ]
+    },
+    {
+        "question": "Los ves en invierno, y no en verano. Tienen frío, y son esponjosos. ¿Qué son?",
+        "answers": [
+            { "text": "Los copos de nieve", "correct": true },
+            { "text": "Las nubes", "correct": false },
+            { "text": "Las montañas", "correct": false },
+            { "text": "Los abrigos", "correct": false }
+        ]
+    },
+    {
+        "question": "Caminamos sin pies, volamos sin alas. ¿Qué somos?",
+        "answers": [
+            { "text": "El tiempo", "correct": false },
+            { "text": "El viento", "correct": false },
+            { "text": "Los sueños", "correct": false },
+            { "text": "Las nubes", "correct": true }
+        ]
+    },
+    {
+        "question": "Mientras más tienes de mí, menos puedes ver. ¿Qué soy?",
+        "answers": [
+            { "text": "La oscuridad", "correct": true },
+            { "text": "La niebla", "correct": false },
+            { "text": "El polvo", "correct": false },
+            { "text": "La sombra", "correct": false }
+        ]
+    },
+    {
+        "question": "Llevo mis casas a cuestas. ¿Quién soy?",
+        "answers": [
+            { "text": "El caracol", "correct": true },
+            { "text": "La tortuga", "correct": false },
+            { "text": "El cangrejo ermitaño", "correct": false },
+            { "text": "La babosa", "correct": false }
+        ]
+    },
+    {
+        "question": "Siempre estoy en frente de ti, pero no me puedes ver. ¿Qué soy?",
+        "answers": [
+            { "text": "El futuro", "correct": true },
+            { "text": "El aire", "correct": false },
+            { "text": "El horizonte", "correct": false },
+            { "text": "La sombra", "correct": false }
+        ]
+    },
+    {
+        "question": "Pertenezco a ti, pero otros lo usan más que tú. ¿Qué es?",
+        "answers": [
+            { "text": "Tu nombre", "correct": true },
+            { "text": "Tu tiempo", "correct": false },
+            { "text": "Tu voz", "correct": false },
+            { "text": "Tu sombra", "correct": false }
+        ]
+    },
+    {
+        "question": "Me tiro al agua, pero no me mojo. ¿Qué soy?",
+        "answers": [
+            { "text": "La sombra", "correct": true },
+            { "text": "El reflejo", "correct": false },
+            { "text": "El aire", "correct": false },
+            { "text": "El tiempo", "correct": false }
+        ]
+    },
+    {
+        "question": "Me desvisto cuando me pongo viejo. ¿Qué soy?",
+        "answers": [
+            { "text": "Un árbol", "correct": false },
+            { "text": "Una cebolla", "correct": true },
+            { "text": "El sol", "correct": false },
+            { "text": "Un plátano", "correct": false }
+        ]
+    },
+    {
+        "question": "Si me nombras, dejo de existir. ¿Qué soy?",
+        "answers": [
+            { "text": "El silencio", "correct": true },
+            { "text": "La sombra", "correct": false },
+            { "text": "La oscuridad", "correct": false },
+            { "text": "El eco", "correct": false }
+        ]
+    },
+    {
+        "question": "Cuanto más seco, más mojo. ¿Qué soy?",
+        "answers": [
+            { "text": "Una toalla", "correct": true },
+            { "text": "Una esponja", "correct": false },
+            { "text": "El agua", "correct": false },
+            { "text": "El mar", "correct": false }
+        ]
+    },
+    {
+        "question": "Me pones la mano en la cabeza y en segundos te cambiaré de apariencia. ¿Qué soy?",
+        "answers": [
+            { "text": "Un sombrero", "correct": false },
+            { "text": "El peine", "correct": false },
+            { "text": "El espejo", "correct": true },
+            { "text": "Una peluca", "correct": false }
+        ]
+    },
+    {
+        "question": "Vuelo sin alas, tengo una cola, y cruzo el cielo con gran velocidad. ¿Qué soy?",
+        "answers": [
+            { "text": "Un cometa", "correct": true },
+            { "text": "Un avión", "correct": false },
+            { "text": "Una estrella fugaz", "correct": false },
+            { "text": "El viento", "correct": false }
+        ]
+    },
+    {
+        "question": "Un hombre sale de casa en la noche bajo la lluvia sin paraguas ni sombrero. Su ropa se moja, pero no un solo cabello de su cabeza. ¿Cómo es posible?",
+        "answers": [
+            { "text": "Es calvo", "correct": true },
+            { "text": "Lleva una capa", "correct": false },
+            { "text": "Corre muy rápido", "correct": false },
+            { "text": "Está en un coche", "correct": false }
+        ]
+    },
+    {
+        "question": "Tengo cuatro patas, pero no puedo caminar. ¿Qué soy?",
+        "answers": [
+            { "text": "Una mesa", "correct": true },
+            { "text": "Una silla", "correct": false },
+            { "text": "Un perro viejo", "correct": false },
+            { "text": "Una cama", "correct": false }
+        ]
+    },
+    {
+        "question": "Tiene raíces que nadie ve, es más alta que los árboles, sube, sube y nunca crece. ¿Qué es?",
+        "answers": [
+            { "text": "Una montaña", "correct": true },
+            { "text": "Un rascacielos", "correct": false },
+            { "text": "El humo", "correct": false },
+            { "text": "Una colina", "correct": false }
+        ]
+    },
+    {
+        "question": "Puedo ser largo o corto; me gusta deslizarme por el cuello, pero no soy una serpiente. ¿Qué soy?",
+        "answers": [
+            { "text": "Una corbata", "correct": true },
+            { "text": "Una bufanda", "correct": false },
+            { "text": "Una cadena", "correct": false },
+            { "text": "Un collar", "correct": false }
+        ]
+    },
+    {
+        "question": "No tengo vida, pero puedo morir. ¿Qué soy?",
+        "answers": [
+            { "text": "Una batería", "correct": false },
+            { "text": "Una luz", "correct": true },
+            { "text": "El fuego", "correct": false },
+            { "text": "Una planta", "correct": false }
+        ]
+    },
+    {
+        "question": "Es tuyo, pero todos lo usan más que tú. ¿Qué es?",
+        "answers": [
+            { "text": "Tu nombre", "correct": true },
+            { "text": "Tu tiempo", "correct": false },
+            { "text": "Tu casa", "correct": false },
+            { "text": "Tu sombra", "correct": false }
+        ]
+    },
+    {
+        "question": "Puedes sostenerlo sin tocarlo o verlo. ¿Qué es?",
+        "answers": [
+            { "text": "Un secreto", "correct": true },
+            { "text": "El tiempo", "correct": false },
+            { "text": "El aire", "correct": false },
+            { "text": "La sombra", "correct": false }
+        ]
+    },
+    {
+        "question": "Si te digo que siempre digo la verdad, ¿estoy mintiendo o diciendo la verdad?",
+        "answers": [
+            { "text": "Paradoja", "correct": true },
+            { "text": "Mentira", "correct": false },
+            { "text": "Verdad", "correct": false },
+            { "text": "Duda", "correct": false }
+        ]
+    },
+    {
+        "question": "Puedes lanzarlo desde el coche, pero se queda contigo. ¿Qué es?",
+        "answers": [
+            { "text": "La sombra", "correct": true },
+            { "text": "El humo", "correct": false },
+            { "text": "El polvo", "correct": false },
+            { "text": "El eco", "correct": false }
+        ]
+    },
+    {
+        "question": "Siempre va hacia adelante, nunca retrocede. ¿Qué es?",
+        "answers": [
+            { "text": "El tiempo", "correct": true },
+            { "text": "El río", "correct": false },
+            { "text": "El reloj", "correct": false },
+            { "text": "El viento", "correct": false }
+        ]
+    },
+    {
+        "question": "Tiene dientes pero no muerde. ¿Qué es?",
+        "answers": [
+            { "text": "Un peine", "correct": true },
+            { "text": "Una sierra", "correct": false },
+            { "text": "Un engranaje", "correct": false },
+            { "text": "Una llave", "correct": false }
+        ]
+    },
+    {
+        "question": "Puedes romperme sin tocarme. ¿Qué soy?",
+        "answers": [
+            { "text": "Un corazón", "correct": false },
+            { "text": "Una promesa", "correct": true },
+            { "text": "El silencio", "correct": false },
+            { "text": "El cristal", "correct": false }
+        ]
+    },
+    {
+        "question": "Puede llenarse con palabras, pero no se pueden escribir en él. ¿Qué es?",
+        "answers": [
+            { "text": "Un diccionario", "correct": false },
+            { "text": "Un libro", "correct": false },
+            { "text": "La mente", "correct": true },
+            { "text": "Una pizarra", "correct": false }
+        ]
+    },
+    {
+        "question": "Soy pesado hacia adelante, pero no lo soy hacia atrás. ¿Qué soy?",
+        "answers": [
+            { "text": "Un tonel", "correct": false },
+            { "text": "Un camión", "correct": false },
+            { "text": "El tonel", "correct": true },
+            { "text": "Una carretilla", "correct": false }
+        ]
+    },
+    {
+        "question": "Si uno más uno no es dos, ¿qué es?",
+        "answers": [
+            { "text": "Once", "correct": true },
+            { "text": "Tres", "correct": false },
+            { "text": "Cero", "correct": false },
+            { "text": "Cinco", "correct": false }
+        ]
+    },
+    {
+        "question": "No soy ni animal, ni vegetal, ni mineral. ¿Qué soy?",
+        "answers": [
+            { "text": "Un pensamiento", "correct": true },
+            { "text": "El aire", "correct": false },
+            { "text": "El tiempo", "correct": false },
+            { "text": "El alma", "correct": false }
+        ]
+    },
+    {
+        "question": "Vivo en la Tierra, pero si me toca el agua, muero. ¿Qué soy?",
+        "answers": [
+            { "text": "El fuego", "correct": true },
+            { "text": "La sal", "correct": false },
+            { "text": "El papel", "correct": false },
+            { "text": "El hielo", "correct": false }
+        ]
+    },
+    {
+        "question": "Si te caes por un precipicio, ¿qué haces?",
+        "answers": [
+            { "text": "Gritar", "correct": false },
+            { "text": "Morir", "correct": false },
+            { "text": "Volver a intentarlo", "correct": true },
+            { "text": "Nada", "correct": false }
+        ]
+    },
+    {
+        "question": "Puedes encontrarme en cada esquina, y en cualquier habitación, pero nunca me verás tocar el suelo. ¿Qué soy?",
+        "answers": [
+            { "text": "Una pared", "correct": false },
+            { "text": "La sombra", "correct": false },
+            { "text": "El techo", "correct": false },
+            { "text": "Un ángulo recto", "correct": true }
+        ]
+    },
+    {
+        "question": "Soy algo, y también soy nada. Puedes verme, pero no puedes tocarme. ¿Qué soy?",
+        "answers": [
+            { "text": "Un reflejo", "correct": true },
+            { "text": "El viento", "correct": false },
+            { "text": "El humo", "correct": false },
+            { "text": "La sombra", "correct": false }
+        ]
+    },
+    {
+        "question": "El que lo hace, no lo necesita. El que lo compra, no lo quiere. El que lo usa, no lo sabe. ¿Qué es?",
+        "answers": [
+            { "text": "Un ataúd", "correct": true },
+            { "text": "Un regalo", "correct": false },
+            { "text": "Un veneno", "correct": false },
+            { "text": "Una sorpresa", "correct": false }
+        ]
+    },
+    {
+        "question": "Soy más valioso que el oro, pero no se puede ver. ¿Qué soy?",
+        "answers": [
+            { "text": "El tiempo", "correct": true },
+            { "text": "La salud", "correct": false },
+            { "text": "La sabiduría", "correct": false },
+            { "text": "El amor", "correct": false }
+        ]
+    },
+    {
+        "question": "Me enciendes para poder verme, pero cuando me ves, me apago. ¿Qué soy?",
+        "answers": [
+            { "text": "Una vela", "correct": true },
+            { "text": "Una bombilla", "correct": false },
+            { "text": "El sol", "correct": false },
+            { "text": "Un fósforo", "correct": false }
+        ]
+    },
+    {
+        "question": "Puedes romperme sin tocarme, atraparme sin correr, y matarme sin sangre. ¿Qué soy?",
+        "answers": [
+            { "text": "El silencio", "correct": false },
+            { "text": "El corazón", "correct": false },
+            { "text": "Una promesa", "correct": true },
+            { "text": "Un sueño", "correct": false }
+        ]
+    },
+    {
+        "question": "Nadie me ha visto jamás, y nadie me verá. Aún así, soy el lugar donde habita todo lo que verás. ¿Qué soy?",
+        "answers": [
+            { "text": "El futuro", "correct": true },
+            { "text": "El aire", "correct": false },
+            { "text": "La sombra", "correct": false },
+            { "text": "El tiempo", "correct": false }
+        ]
+    },
+    {
+        "question": "Soy algo, soy nada, soy todo a la vez. ¿Qué soy?",
+        "answers": [
+            { "text": "El tiempo", "correct": true },
+            { "text": "El viento", "correct": false },
+            { "text": "La mente", "correct": false },
+            { "text": "El espacio", "correct": false }
+        ]
+    },
+    {
+        "question": "No puedes verme, pero siempre me sientes. Puedo romper cosas, pero no me puedes atrapar. ¿Qué soy?",
+        "answers": [
+            { "text": "El viento", "correct": true },
+            { "text": "La sombra", "correct": false },
+            { "text": "El tiempo", "correct": false },
+            { "text": "El amor", "correct": false }
+        ]
+    },
+    {
+        "question": "Me parezco a un reloj de arena, pero no mido el tiempo. ¿Qué soy?",
+        "answers": [
+            { "text": "El cuerpo humano", "correct": true },
+            { "text": "Un reloj", "correct": false },
+            { "text": "Un espejismo", "correct": false },
+            { "text": "Una sombra", "correct": false }
+        ]
+    },
+    {
+        "question": "Me tiras cuando me necesitas y me recoges cuando no me necesitas. ¿Qué soy?",
+        "answers": [
+            { "text": "Una ancla", "correct": true },
+            { "text": "Una red", "correct": false },
+            { "text": "Una cuerda", "correct": false },
+            { "text": "Un lazo", "correct": false }
+        ]
     }
 ]
+
+
 
