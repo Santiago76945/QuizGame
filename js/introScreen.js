@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const resultsButton = document.createElement('button');
         resultsButton.textContent = 'Ver Resultados';
         resultsButton.style.marginTop = '20px';
-        resultsButton.classList.add('results-screen-button');
+        resultsButton.classList.add('intro-screen-button');  // Añadir la clase específica
         resultsButton.style.padding = '10px 20px';
         resultsButton.style.fontSize = '18px';
         resultsButton.style.cursor = 'pointer';

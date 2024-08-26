@@ -266,5 +266,34 @@ img {
     }
 }
 
+.menu-button {
+    width: 95%; /* Ocupa todo el espacio del contenedor */
+}
+
+.intro-screen-button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.intro-screen-button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+.intro-screen-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.intro-screen-button:active {
+    transform: scale(0.95);
+}
 
 
