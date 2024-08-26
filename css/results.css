@@ -230,3 +230,41 @@ img {
 .intro-screen-button:active {
     transform: scale(0.95);
 }
+
+/* Estilos básicos para el contenedor de resultados */
+#result-items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+/* Estilos para cada elemento de resultado */
+.result-item {
+    padding: 15px;
+    border-radius: 15px;
+    transform: scale(0.8);
+    animation: popUp 0.4s forwards;
+}
+
+.result-item.hidden {
+    display: none;
+}
+
+/* Animación de pop-up */
+@keyframes popUp {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animación para el mensaje del ganador */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+

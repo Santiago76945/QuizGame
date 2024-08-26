@@ -1,3 +1,5 @@
+//introScreen.js
+
 document.addEventListener('DOMContentLoaded', function () {
     // Crear el overlay de la pantalla negra
     const overlay = document.createElement('div');
@@ -58,9 +60,18 @@ document.addEventListener('DOMContentLoaded', function () {
         logo.style.borderRadius = '50%';
         logo.style.transition = 'width 2s ease-in-out, height 2s ease-in-out, opacity 2s ease-in-out';
 
+        // Obtener el idioma seleccionado
+        const selectedLanguage = localStorage.getItem('selectedLanguage') || 'es';
+
+        // Texto del botón de comenzar en ambos idiomas
+        const startButtonText = {
+            es: 'Comenzar',
+            en: "Let's Play"
+        };
+
         // Crear el botón de comenzar
         const startButton = document.createElement('button');
-        startButton.textContent = 'Comenzar';
+        startButton.textContent = startButtonText[selectedLanguage];
         startButton.classList.add('intro-screen-button');  // Añadir la clase específica
         startButton.style.marginTop = '20px';
         startButton.style.padding = '10px 20px';
@@ -68,10 +79,31 @@ document.addEventListener('DOMContentLoaded', function () {
         startButton.style.cursor = 'pointer';
         startButton.style.transition = 'opacity 1s ease-in-out';
 
-        // Añadir el logo y el botón al overlay
+        // Crear el disclaimer con posición absoluta
+        const disclaimer = document.createElement('p');
+        disclaimer.classList.add('footer-text'); // Clase para el texto de footer
+        disclaimer.style.color = 'white';
+        disclaimer.style.fontSize = '16px';
+        disclaimer.style.textAlign = 'center';
+        disclaimer.style.position = 'absolute';
+        disclaimer.style.bottom = '10px';
+        disclaimer.style.left = '50%';
+        disclaimer.style.transform = 'translateX(-50%)';
+        disclaimer.style.padding = '10px';
+
+        // Texto del disclaimer en ambos idiomas
+        const disclaimerTexts = {
+            es: '© 2024 TriviaRUSH. Todos los derechos reservados. TriviaRUSH es un juego desarrollado por Santiago Haspert y TK Games. Todos los derechos sobre el contenido, diseño, y software de TriviaRUSH están reservados. La reproducción, distribución, exhibición pública, o cualquier otra forma de utilización de este juego o de su contenido sin la autorización expresa de los titulares de los derechos está estrictamente prohibida.',
+            en: '© 2024 TriviaRUSH. All rights reserved. TriviaRUSH is a game developed by Santiago Haspert and TK Games. All rights to the content, design, and software of TriviaRUSH are reserved. Reproduction, distribution, public display, or any other form of use of this game or its content without the express authorization of the rights holders is strictly prohibited.'
+        };
+
+        // Asignar el texto del disclaimer basado en el idioma seleccionado
+        disclaimer.textContent = disclaimerTexts[selectedLanguage];
+
+        // Añadir el logo, el botón, y el disclaimer al overlay
         overlay.appendChild(logo);
         overlay.appendChild(startButton);
-
+        overlay.appendChild(disclaimer);
 
         // Animación de entrada para el logo
         setTimeout(() => {
@@ -93,3 +125,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // Añadir el overlay al cuerpo del documento
     document.body.appendChild(overlay);
 });
+
+
