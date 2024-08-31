@@ -841,10 +841,10 @@
     {
         "question": "Si Juan tiene $200 y gasta el 25% en un libro, ¿cuánto dinero le queda?",
         "answers": [
-            { "text": "$150", "correct": false },
+            { "text": "$150", "correct": true },
             { "text": "$100", "correct": false },
             { "text": "$50", "correct": false },
-            { "text": "$150", "correct": true }
+            { "text": "$75", "correct": false }
         ]
     },
     {
