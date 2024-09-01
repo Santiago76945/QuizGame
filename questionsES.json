@@ -911,16 +911,7 @@
         ]
     },
     {
-        "question": "Caminamos sin pies, volamos sin alas. ¿Qué somos?",
-        "answers": [
-            { "text": "El tiempo", "correct": false },
-            { "text": "El viento", "correct": false },
-            { "text": "Los sueños", "correct": false },
-            { "text": "Las nubes", "correct": true }
-        ]
-    },
-    {
-        "question": "Mientras más tienes de mí, menos puedes ver. ¿Qué soy?",
+        "question": "Mientras más presente estoy, menos puedes ver. ¿Qué soy?",
         "answers": [
             { "text": "La oscuridad", "correct": true },
             { "text": "La niebla", "correct": false },
@@ -992,7 +983,7 @@
         ]
     },
     {
-        "question": "Me pones la mano en la cabeza y en segundos te cambiaré de apariencia. ¿Qué soy?",
+        "question": "Si me pones la mano en la cabeza, reflejaré tu nueva apariencia. ¿Qué soy?",
         "answers": [
             { "text": "Un sombrero", "correct": false },
             { "text": "El peine", "correct": false },
@@ -1025,15 +1016,6 @@
             { "text": "Una silla", "correct": false },
             { "text": "Un perro viejo", "correct": false },
             { "text": "Una cama", "correct": false }
-        ]
-    },
-    {
-        "question": "Tiene raíces que nadie ve, es más alta que los árboles, sube, sube y nunca crece. ¿Qué es?",
-        "answers": [
-            { "text": "Una montaña", "correct": true },
-            { "text": "Un rascacielos", "correct": false },
-            { "text": "El humo", "correct": false },
-            { "text": "Una colina", "correct": false }
         ]
     },
     {

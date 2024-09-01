@@ -909,15 +909,6 @@
         ]
     },
     {
-        "question": "We walk without feet, we fly without wings. What are we?",
-        "answers": [
-            { "text": "Clouds", "correct": true },
-            { "text": "Time", "correct": false },
-            { "text": "Dreams", "correct": false },
-            { "text": "The wind", "correct": false }
-        ]
-    },
-    {
         "question": "The more you have of me, the less you can see. What am I?",
         "answers": [
             { "text": "Darkness", "correct": true },
@@ -990,7 +981,7 @@
         ]
     },
     {
-        "question": "You place your hand on my head, and in seconds I change your appearance. What am I?",
+        "question": "You place your hand on my head, and I change your appearance. What am I?",
         "answers": [
             { "text": "A mirror", "correct": true },
             { "text": "A hat", "correct": false },
