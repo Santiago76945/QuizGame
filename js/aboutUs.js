@@ -1,5 +1,3 @@
-// aboutUs.js
-
 // Obtener el idioma seleccionado de localStorage
 let selectedLanguage = localStorage.getItem('selectedLanguage') || 'es'; // Valor por defecto en español
 

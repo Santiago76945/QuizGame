@@ -1,6 +1,26 @@
 //introScreen.js
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Función para verificar si ya se ejecutó hoy
+    function shouldRunToday() {
+        const lastRunDate = localStorage.getItem('lastRunDate');
+        const today = new Date().toISOString().split('T')[0]; // Obtener solo la parte de la fecha en formato YYYY-MM-DD
+
+        if (lastRunDate === today) {
+            // Ya se ejecutó hoy
+            return false;
+        } else {
+            // Actualizar la fecha de la última ejecución
+            localStorage.setItem('lastRunDate', today);
+            return true;
+        }
+    }
+
+    // Verificar si debe ejecutarse hoy
+    if (!shouldRunToday()) {
+        return; // No ejecutar si ya se ejecutó hoy
+    }
+
     // Crear el overlay de la pantalla negra
     const overlay = document.createElement('div');
     overlay.style.position = 'fixed';
