@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriviaRush - Sobre Nosotros</title>
+    <link rel="stylesheet" href="/css/indexStyle.css"> <!-- Reutilizando los estilos del index -->
+</head>
+
+<body>
+    <div class="menu-container">
+        <div class="menu-content">
+            <img src="/images/triviaRushLogo.png" alt="Logo Trivia Rush" class="menu-logo">
+            <h2 class="about-title">Sobre TK Games</h2>
+            <p class="about-message">
+                TK Games es una división de Thiago King, propiedad de Santiago Haspert Piaggio, enfocada en el desarrollo de videojuegos, especialmente para dispositivos móviles. Nos apasiona crear juegos accesibles y divertidos para todos. Desde nuestros inicios, hemos trabajado con dedicación en cada proyecto, buscando siempre mejorar y aprender. Nuestro primer juego, "Super Lucky's Adventure", está disponible en Google Play Store y marcó nuestro comienzo en el mundo de los videojuegos.
+                <br><br>
+                Con un equipo comprometido, en TK Games seguimos explorando nuevas ideas con el objetivo de hacer juegos que sean disfrutables y accesibles para una amplia audiencia. Siempre estamos felices de escuchar la opinión de nuestra audiencia para mejorar la calidad de nuestros productos y acercarnos a la calidad que esperan de nosotros. Muchas gracias por confiar en nosotros y esperamos que disfrutes de nuestros productos.
+            </p>
+            <button class="menu-button back-button" onclick="goBack()">Volver al menú principal</button>
+        </div>
+    </div>
+
+    <script src="/js/about.js"></script> <!-- Enlazando el archivo JS para el manejo de idiomas -->
+    <script>
+        function goBack() {
+            window.location.href = '/index.html'; // Redirige al menú principal
+        }
+    </script>
+</body>
+
+</html>

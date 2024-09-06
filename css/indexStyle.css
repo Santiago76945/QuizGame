@@ -199,3 +199,21 @@ body {
 .intro-screen-button:active {
     transform: scale(0.95);
 }
+
+.about-message {
+    color: #333; /* Usa un color oscuro como gris fuerte para un mejor contraste */
+    font-size: 18px; /* Aumenta el tamaño de la fuente para mejor legibilidad */
+    line-height: 1.6; /* Añade espacio entre líneas para mejorar la lectura */
+}
+
+.about-title {
+    color: #154583; /* Cambia a un color azul que resalte y sea fácil de leer */
+    font-size: 24px; /* Ajusta el tamaño del texto para mayor impacto */
+    margin-bottom: 20px; /* Añade espacio debajo del título para separar del texto del cuerpo */
+    text-align: center; /* Centra el título para un diseño balanceado */
+    font-weight: bold; /* Aumenta el grosor del texto para destacarlo más */
+}
+
+.about-message {
+    margin-bottom: 20px; /* Añade espacio debajo del texto */
+}

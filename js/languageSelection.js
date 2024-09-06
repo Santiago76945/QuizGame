@@ -10,12 +10,18 @@ const texts = {
         playButton: 'Jugar',
         settingsButton: 'Ajustes',
         changeNameButton: 'Cambiar nombre de los jugadores',
+        premiumButton: 'Adquirir versión premium',
+        aboutButton: 'Sobre nosotros',
+        contactButton: 'Contáctanos',
         footerText: 'Este juego pertenece a Santiago Haspert, todos los derechos reservados.',
     },
     en: {
         playButton: 'Play',
         settingsButton: 'Settings',
         changeNameButton: 'Change Player Names',
+        premiumButton: 'Acquire Premium Version',
+        aboutButton: 'About Us',
+        contactButton: 'Contact Us',
         footerText: 'This game belongs to Santiago Haspert, all rights reserved.',
     }
 };
@@ -35,8 +41,10 @@ function setLanguage(language) {
 function updateTexts() {
     console.log(`Actualizando textos en la página a: ${selectedLanguage}`);
     document.querySelector('.play-button').textContent = texts[selectedLanguage].playButton;
-    document.querySelector('.settings-button').textContent = texts[selectedLanguage].settingsButton;
     document.querySelector('.change-name-button').textContent = texts[selectedLanguage].changeNameButton;
+    document.querySelector('.premium-button').textContent = texts[selectedLanguage].premiumButton;
+    document.querySelector('.about-button').textContent = texts[selectedLanguage].aboutButton;
+    document.querySelector('.contact-button').textContent = texts[selectedLanguage].contactButton;
     document.querySelector('.footer-text p').textContent = texts[selectedLanguage].footerText;
     console.log(`Textos actualizados para el idioma: ${selectedLanguage}`);
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriviaRush - Adquirir Premium</title>
+    <link rel="stylesheet" href="/css/indexStyle.css"> <!-- Reutilizando los estilos del index -->
+</head>
+
+<body>
+    <div class="menu-container">
+        <div class="menu-content">
+            <img src="/images/triviaRushLogo.png" alt="Logo Trivia Rush" class="menu-logo">
+            <h2 class="premium-message">¡Adquiere la versión sin publicidad y disfruta de una experiencia sin interrupciones!</h2>
+            <button class="menu-button acquire-button">Adquirir versión premium</button><br>
+            <button class="menu-button back-button" onclick="goBack()">Volver al menú principal</button><br>
+        </div>
+    </div>
+
+    <script src="/js/goPremium.js"></script> <!-- Enlazando el archivo JS para el manejo de idiomas -->
+    <script>
+        function goBack() {
+            window.location.href = '/index.html'; // Redirige al menú principal
+        }
+    </script>
+</body>
+
+</html>

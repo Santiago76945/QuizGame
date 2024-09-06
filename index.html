@@ -14,12 +14,14 @@
             <img src="/images/triviaRushLogo.png" alt="Logo Trivia Rush" class="menu-logo">
             <img src="/images/illustration2.png" alt="Ilustración de jugadores" class="menu-illustration">
             <button class="menu-button play-button" onclick="startGame()">Jugar</button><br>
-            <button class="menu-button settings-button" onclick="openSettings()">Ajustes</button><br>
             <button class="menu-button change-name-button" id="change-name-button">Cambiar nombre de los jugadores</button><br>
+            <button class="menu-button premium-button" onclick="acquirePremium()">Adquirir versión premium</button><br>
+            <button class="menu-button about-button" onclick="aboutUs()">Sobre nosotros</button><br>
+            <button class="menu-button contact-button" onclick="contactUs()">Contáctanos</button><br>
             <div class="language-buttons">
                 <button class="language-button" id="language-es">Español 🇪🇸</button>
                 <button class="language-button" id="language-en">English 🇺🇸</button>
-            </div>                     
+            </div>
         </div>
         <div class="footer-text" style="display:none;">
             <p>Este juego pertenece a Santiago Haspert, todos los derechos reservados.</p>
@@ -31,10 +33,6 @@
         function startGame() {
             window.location.href = '/pages/game.html';
         }
-
-        function openSettings() {
-            alert('Open Settings clicked');
-        }
     </script>
     <script type="module">
         import { changePlayerNames } from '/js/playersInfo.js';
@@ -45,6 +43,7 @@
     <script src="/js/dynamicBackground.js"></script>
     <script src="/js/introScreen.js"></script>
     <script src="/js/soundEffects.js"></script>
+    <script src="/js/buttonRedirections.js"></script>
 </body>
 
 </html>
